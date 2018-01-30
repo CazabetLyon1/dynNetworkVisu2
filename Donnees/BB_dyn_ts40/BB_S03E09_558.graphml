@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+	http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+	<key id="label" for="node" attr.name="label" attr.type="string"/>
+	<key id="weight" for="edge" attr.name="weight" attr.type="double"/>
+	<graph id="G" edgedefault="undirected">
+		<node id="n0">
+			<data key="label">ABQ Dectective #1</data>
+		</node>
+		<node id="n1">
+			<data key="label">ABQ Dectective #2</data>
+		</node>
+		<node id="n2">
+			<data key="label">George Merkert</data>
+		</node>
+		<node id="n3">
+			<data key="label">Hank Schrader</data>
+		</node>
+		<node id="n4">
+			<data key="label">Union Rep</data>
+		</node>
+		<node id="n5">
+			<data key="label">APD Officer</data>
+		</node>
+		<node id="n6">
+			<data key="label">Walter White</data>
+		</node>
+		<node id="n7">
+			<data key="label">Adam Pinkman</data>
+		</node>
+		<node id="n8">
+			<data key="label">Jake Pinkman</data>
+		</node>
+		<node id="n9">
+			<data key="label">Jesse Pinkman</data>
+		</node>
+		<node id="n10">
+			<data key="label">Mr. Gardiner</data>
+		</node>
+		<node id="n11">
+			<data key="label">Mrs. Pinkman</data>
+		</node>
+		<node id="n12">
+			<data key="label">Saul Goodman</data>
+		</node>
+		<node id="n13">
+			<data key="label">Addict</data>
+		</node>
+		<node id="n14">
+			<data key="label">Tattooed Biker</data>
+		</node>
+		<node id="n15">
+			<data key="label">Agent Buddy</data>
+		</node>
+		<node id="n16">
+			<data key="label">Andrea Cantillo</data>
+		</node>
+		<node id="n17">
+			<data key="label">Brock Cantillo</data>
+		</node>
+		<node id="n18">
+			<data key="label">Group Leader</data>
+		</node>
+		<node id="n19">
+			<data key="label">Mrs. Cantillo</data>
+		</node>
+		<node id="n20">
+			<data key="label">Skinny Pete</data>
+		</node>
+		<node id="n21">
+			<data key="label">Andrew Coffman</data>
+		</node>
+		<node id="n22">
+			<data key="label">Antonio</data>
+		</node>
+		<node id="n23">
+			<data key="label">Arms Dealer</data>
+		</node>
+		<node id="n24">
+			<data key="label">Leonel Salamanca</data>
+		</node>
+		<node id="n25">
+			<data key="label">Marco Salamanca</data>
+		</node>
+		<node id="n26">
+			<data key="label">Arroyo Realty Manager</data>
+		</node>
+		<node id="n27">
+			<data key="label">Badger</data>
+		</node>
+		<node id="n28">
+			<data key="label">Christian "Combo" Ortega</data>
+		</node>
+		<node id="n29">
+			<data key="label">Clovis</data>
+		</node>
+		<node id="n30">
+			<data key="label">Getz</data>
+		</node>
+		<node id="n31">
+			<data key="label">Barry</data>
+		</node>
+		<node id="n32">
+			<data key="label">Carmen Molina</data>
+		</node>
+		<node id="n33">
+			<data key="label">Ben</data>
+		</node>
+		<node id="n34">
+			<data key="label">Beneke Employee #1</data>
+		</node>
+		<node id="n35">
+			<data key="label">Ted Beneke</data>
+		</node>
+		<node id="n36">
+			<data key="label">Beneke Employee #2</data>
+		</node>
+		<node id="n37">
+			<data key="label">Skyler White</data>
+		</node>
+		<node id="n38">
+			<data key="label">Beto</data>
+		</node>
+		<node id="n39">
+			<data key="label">Tortuga</data>
+		</node>
+		<node id="n40">
+			<data key="label">Big Biker</data>
+		</node>
+		<node id="n41">
+			<data key="label">Billy</data>
+		</node>
+		<node id="n42">
+			<data key="label">Jimmy</data>
+		</node>
+		<node id="n43">
+			<data key="label">Bob</data>
+		</node>
+		<node id="n44">
+			<data key="label">Bogdan Wolynetz</data>
+		</node>
+		<node id="n45">
+			<data key="label">Boy #1</data>
+		</node>
+		<node id="n46">
+			<data key="label">Cara</data>
+		</node>
+		<node id="n47">
+			<data key="label">Concerned Parent #1</data>
+		</node>
+		<node id="n48">
+			<data key="label">Concerned Parent #2</data>
+		</node>
+		<node id="n49">
+			<data key="label">Marie Schrader</data>
+		</node>
+		<node id="n50">
+			<data key="label">Sad Faced Girl</data>
+		</node>
+		<node id="n51">
+			<data key="label">Walter White Jr.</data>
+		</node>
+		<node id="n52">
+			<data key="label">Wide Eyed Boy</data>
+		</node>
+		<node id="n53">
+			<data key="label">Chad</data>
+		</node>
+		<node id="n54">
+			<data key="label">Chad's girlfriend</data>
+		</node>
+		<node id="n55">
+			<data key="label">Clinic's Clerk</data>
+		</node>
+		<node id="n56">
+			<data key="label">Police Officer #1</data>
+		</node>
+		<node id="n57">
+			<data key="label">Cynthia</data>
+		</node>
+		<node id="n58">
+			<data key="label">Gustavo Fring</data>
+		</node>
+		<node id="n59">
+			<data key="label">DEA agent #1</data>
+		</node>
+		<node id="n60">
+			<data key="label">DEA agent Vanco</data>
+		</node>
+		<node id="n61">
+			<data key="label">Federale #1</data>
+		</node>
+		<node id="n62">
+			<data key="label">SAC Ramey</data>
+		</node>
+		<node id="n63">
+			<data key="label">Danny's Auto Service Employee #1</data>
+		</node>
+		<node id="n64">
+			<data key="label">Ken</data>
+		</node>
+		<node id="n65">
+			<data key="label">Doctor #1</data>
+		</node>
+		<node id="n66">
+			<data key="label">Hospital Administrator</data>
+		</node>
+		<node id="n67">
+			<data key="label">Doctor ambulance</data>
+		</node>
+		<node id="n68">
+			<data key="label">Doctor hospital</data>
+		</node>
+		<node id="n69">
+			<data key="label">Domingo Molina</data>
+		</node>
+		<node id="n70">
+			<data key="label">Emilio Koyama</data>
+		</node>
+		<node id="n71">
+			<data key="label">Donald Margolis</data>
+		</node>
+		<node id="n72">
+			<data key="label">Jane Margolis</data>
+		</node>
+		<node id="n73">
+			<data key="label">Nurse #2</data>
+		</node>
+		<node id="n74">
+			<data key="label">O.M.I. Officer</data>
+		</node>
+		<node id="n75">
+			<data key="label">Police agent</data>
+		</node>
+		<node id="n76">
+			<data key="label">Stew</data>
+		</node>
+		<node id="n77">
+			<data key="label">Waitress #2</data>
+		</node>
+		<node id="n78">
+			<data key="label">Dr. Chavez</data>
+		</node>
+		<node id="n79">
+			<data key="label">Dr. Delcavoli</data>
+		</node>
+		<node id="n80">
+			<data key="label">Dr. Victor Bravenec</data>
+		</node>
+		<node id="n81">
+			<data key="label">Dr. Soper</data>
+		</node>
+		<node id="n82">
+			<data key="label">Duane Chow</data>
+		</node>
+		<node id="n83">
+			<data key="label">Mike Ehrmantraut</data>
+		</node>
+		<node id="n84">
+			<data key="label">EMT</data>
+		</node>
+		<node id="n85">
+			<data key="label">ER Doctor #1</data>
+		</node>
+		<node id="n86">
+			<data key="label">ER Doctor #2</data>
+		</node>
+		<node id="n87">
+			<data key="label">Elliott Schwartz</data>
+		</node>
+		<node id="n88">
+			<data key="label">Gretchen Schwartz</data>
+		</node>
+		<node id="n89">
+			<data key="label">Scientist</data>
+		</node>
+		<node id="n90">
+			<data key="label">Employee #1</data>
+		</node>
+		<node id="n91">
+			<data key="label">Farley</data>
+		</node>
+		<node id="n92">
+			<data key="label">Francesca</data>
+		</node>
+		<node id="n93">
+			<data key="label">Friendly Agent</data>
+		</node>
+		<node id="n94">
+			<data key="label">Steven Gomez</data>
+		</node>
+		<node id="n95">
+			<data key="label">Gale Boetticher</data>
+		</node>
+		<node id="n96">
+			<data key="label">Paul Canterna</data>
+		</node>
+		<node id="n97">
+			<data key="label">Gonzo</data>
+		</node>
+		<node id="n98">
+			<data key="label">Tuco Salamanca</data>
+		</node>
+		<node id="n99">
+			<data key="label">Juan Bolsa</data>
+		</node>
+		<node id="n100">
+			<data key="label">Janice</data>
+		</node>
+		<node id="n101">
+			<data key="label">Mrs Ortega</data>
+		</node>
+		<node id="n102">
+			<data key="label">OPR Official #1</data>
+		</node>
+		<node id="n103">
+			<data key="label">Old Joe</data>
+		</node>
+		<node id="n104">
+			<data key="label">Pa Kettie</data>
+		</node>
+		<node id="n105">
+			<data key="label">Physical Therapist</data>
+		</node>
+		<node id="n106">
+			<data key="label">Ramey</data>
+		</node>
+		<node id="n107">
+			<data key="label">Ricky</data>
+		</node>
+		<node id="n108">
+			<data key="label">Russell</data>
+		</node>
+		<node id="n109">
+			<data key="label">Tim Roberts</data>
+		</node>
+		<node id="n110">
+			<data key="label">Tio's nurse</data>
+		</node>
+		<node id="n111">
+			<data key="label">Wendy</data>
+		</node>
+		<node id="n112">
+			<data key="label">Hector Salamanca</data>
+		</node>
+		<node id="n113">
+			<data key="label">Henry Tyree</data>
+		</node>
+		<node id="n114">
+			<data key="label">Paul Tyree</data>
+		</node>
+		<node id="n115">
+			<data key="label">Hospital Medic</data>
+		</node>
+		<node id="n116">
+			<data key="label">Hot Chick Cop</data>
+		</node>
+		<node id="n117">
+			<data key="label">Schlubby Guy #2</data>
+		</node>
+		<node id="n118">
+			<data key="label">Jeffrey</data>
+		</node>
+		<node id="n119">
+			<data key="label">Mail Lady #1</data>
+		</node>
+		<node id="n120">
+			<data key="label">Prospective Buyer #2</data>
+		</node>
+		<node id="n121">
+			<data key="label">Sara Tyree</data>
+		</node>
+		<node id="n122">
+			<data key="label">Spooge</data>
+		</node>
+		<node id="n123">
+			<data key="label">Spooge's Lady</data>
+		</node>
+		<node id="n124">
+			<data key="label">Tomás Cantillo</data>
+		</node>
+		<node id="n125">
+			<data key="label">Victor</data>
+		</node>
+		<node id="n126">
+			<data key="label">Waitress #3</data>
+		</node>
+		<node id="n127">
+			<data key="label">Wino</data>
+		</node>
+		<node id="n128">
+			<data key="label">Young Boy #1</data>
+		</node>
+		<node id="n129">
+			<data key="label">Jewelry Store Owner</data>
+		</node>
+		<node id="n130">
+			<data key="label">Jock</data>
+		</node>
+		<node id="n131">
+			<data key="label">Jock's Friend #1</data>
+		</node>
+		<node id="n132">
+			<data key="label">Jodi Nichols</data>
+		</node>
+		<node id="n133">
+			<data key="label">Prospective Buyer #1</data>
+		</node>
+		<node id="n134">
+			<data key="label">Kaylee Ehrmantraut</data>
+		</node>
+		<node id="n135">
+			<data key="label">Mesa Credit Union employee #1</data>
+		</node>
+		<node id="n136">
+			<data key="label">Lead Doctor</data>
+		</node>
+		<node id="n137">
+			<data key="label">Local Correspondant</data>
+		</node>
+		<node id="n138">
+			<data key="label">Louis Corbett</data>
+		</node>
+		<node id="n139">
+			<data key="label">Soren</data>
+		</node>
+		<node id="n140">
+			<data key="label">Margaret</data>
+		</node>
+		<node id="n141">
+			<data key="label">Neighborhood Kid #1</data>
+		</node>
+		<node id="n142">
+			<data key="label">Medical Technician</data>
+		</node>
+		<node id="n143">
+			<data key="label">Stacey Ehrmantraut</data>
+		</node>
+		<node id="n144">
+			<data key="label">Mrs. Pope</data>
+		</node>
+		<node id="n145">
+			<data key="label">No-Doze</data>
+		</node>
+		<node id="n146">
+			<data key="label">Nurse</data>
+		</node>
+		<node id="n147">
+			<data key="label">Ob-Gyn</data>
+		</node>
+		<node id="n148">
+			<data key="label">Ob-Gyn #2</data>
+		</node>
+		<node id="n149">
+			<data key="label">Off-Duty Police Officer</data>
+		</node>
+		<node id="n150">
+			<data key="label">Officer Cavanaugh</data>
+		</node>
+		<node id="n151">
+			<data key="label">Officer Saxton</data>
+		</node>
+		<node id="n152">
+			<data key="label">Saxton's Partner</data>
+		</node>
+		<node id="n153">
+			<data key="label">Pamela</data>
+		</node>
+		<node id="n154">
+			<data key="label">Pollos Manager</data>
+		</node>
+		<node id="n155">
+			<data key="label">Prisoner #1</data>
+		</node>
+		<node id="n156">
+			<data key="label">Realtor</data>
+		</node>
+		<node id="n157">
+			<data key="label">Receptionist #1</data>
+		</node>
+		<node id="n158">
+			<data key="label">Restaurant Employee #1</data>
+		</node>
+		<node id="n159">
+			<data key="label">Schlubby Guy #1</data>
+		</node>
+		<node id="n160">
+			<data key="label">Stan</data>
+		</node>
+		<node id="n161">
+			<data key="label">Waitress #1</data>
+		</node>
+		<node id="n162">
+			<data key="label">Student #1</data>
+		</node>
+		<node id="n163">
+			<data key="label">Technician</data>
+		</node>
+		<node id="n164">
+			<data key="label">Thug Buddy</data>
+		</node>
+		<node id="n165">
+			<data key="label">Tweaky Dude</data>
+		</node>
+		<node id="n166">
+			<data key="label">Urinal Guy</data>
+		</node>
+		<edge source="n0" target="n1">
+			<data key="weight">5.04</data>
+		</edge>
+		<edge source="n0" target="n2">
+			<data key="weight">6.462</data>
+		</edge>
+		<edge source="n0" target="n3">
+			<data key="weight">55.777</data>
+		</edge>
+		<edge source="n0" target="n4">
+			<data key="weight">13.7</data>
+		</edge>
+		<edge source="n1" target="n3">
+			<data key="weight">6.93</data>
+		</edge>
+		<edge source="n1" target="n4">
+			<data key="weight">8.26</data>
+		</edge>
+		<edge source="n5" target="n6">
+			<data key="weight">1.4</data>
+		</edge>
+		<edge source="n23" target="n24">
+			<data key="weight">18.698</data>
+		</edge>
+		<edge source="n23" target="n25">
+			<data key="weight">67.24</data>
+		</edge>
+		<edge source="n84" target="n9">
+			<data key="weight">11.4</data>
+		</edge>
+		<edge source="n85" target="n86">
+			<data key="weight">14.14</data>
+		</edge>
+		<edge source="n93" target="n94">
+			<data key="weight">15.67</data>
+		</edge>
+		<edge source="n95" target="n9">
+			<data key="weight">37.205</data>
+		</edge>
+		<edge source="n95" target="n6">
+			<data key="weight">152.791</data>
+		</edge>
+		<edge source="n2" target="n58">
+			<data key="weight">16.844</data>
+		</edge>
+		<edge source="n2" target="n3">
+			<data key="weight">34.449</data>
+		</edge>
+		<edge source="n2" target="n49">
+			<data key="weight">24.579</data>
+		</edge>
+		<edge source="n2" target="n94">
+			<data key="weight">3.44</data>
+		</edge>
+		<edge source="n2" target="n6">
+			<data key="weight">37.269</data>
+		</edge>
+		<edge source="n58" target="n99">
+			<data key="weight">110.406</data>
+		</edge>
+		<edge source="n58" target="n6">
+			<data key="weight">154.498</data>
+		</edge>
+		<edge source="n58" target="n51">
+			<data key="weight">5.01</data>
+		</edge>
+		<edge source="n3" target="n49">
+			<data key="weight">143.362</data>
+		</edge>
+		<edge source="n3" target="n102">
+			<data key="weight">12.02</data>
+		</edge>
+		<edge source="n3" target="n4">
+			<data key="weight">5.679</data>
+		</edge>
+		<edge source="n9" target="n12">
+			<data key="weight">31.53</data>
+		</edge>
+		<edge source="n9" target="n20">
+			<data key="weight">11.82</data>
+		</edge>
+		<edge source="n9" target="n6">
+			<data key="weight">547.828</data>
+		</edge>
+		<edge source="n136" target="n49">
+			<data key="weight">37.455</data>
+		</edge>
+		<edge source="n136" target="n37">
+			<data key="weight">1.402</data>
+		</edge>
+		<edge source="n49" target="n37">
+			<data key="weight">122.587</data>
+		</edge>
+		<edge source="n49" target="n94">
+			<data key="weight">4.98</data>
+		</edge>
+		<edge source="n49" target="n6">
+			<data key="weight">67.012</data>
+		</edge>
+		<edge source="n49" target="n51">
+			<data key="weight">20.069</data>
+		</edge>
+		<edge source="n12" target="n6">
+			<data key="weight">56.482</data>
+		</edge>
+		<edge source="n37" target="n6">
+			<data key="weight">194.634</data>
+		</edge>
+		<edge source="n94" target="n6">
+			<data key="weight">88.338</data>
+		</edge>
+		<edge source="n125" target="n6">
+			<data key="weight">4.89</data>
+		</edge>
+		<edge source="n6" target="n51">
+			<data key="weight">76.807</data>
+		</edge>
+	</graph>
+</graphml>
