@@ -14,9 +14,12 @@ for noeud in node:
     destination.write("     {\"id\": \"" + id +"\"},\n")
 destination.write(" ],\n")
 destination.write(" \"links\": [\n")
-link = link.split(',')
-
-
+link = link.split('{')
+del link[0]
+for edge in link:
+    edge = edge.split(",")
+    destination.write("     {" + edge[0] + ", " + edge[2] + ", \"value\": " + edge[1][11:])
+    destination.write("},\n")
 
 destination.write(" ]\n")
 destination.write("}")
