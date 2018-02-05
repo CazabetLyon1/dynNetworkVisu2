@@ -1,6 +1,9 @@
 import argparse
 from xml.etree.ElementTree import ElementTree
 import json
+import os
+
+
 
 parser = argparse.ArgumentParser(description="Convert GraphML file to JSON")
 parser.add_argument("--static", action="store_true", default=False, required=False, help="Specify whether you would to include static properties from source file")
@@ -66,3 +69,36 @@ for edge in edges[:]:
 						})
 outfilename = args.filename.split(".")[-2]+".json" if len(args.filename.split(".")) >= 2 else args.filename+".json"
 file(outfilename, "w").write(json.dumps(out))
+
+nom_fichier = outfilename
+source = open(nom_fichier, "r")
+destination = open(outfilename[:outfilename.rfind(".")] +"_D3.json", "w")
+destination.write("{\n")
+destination.write(" \"nodes\": [\n")
+toutesleslignes = source.readlines()
+toutesleslignes = str1 = ''.join(toutesleslignes)
+node, link = toutesleslignes.split("}, \"edges\": [")
+node = node[11:]
+node = node.split(',')
+i = 0
+for noeud in node:
+	noeud = noeud.split("\"")
+	if i != 0:
+		destination.write(",\n")
+	destination.write("     {\"id\": \"" + noeud[1 ] +"\"}")
+	i+=1
+destination.write("\n ],\n")
+destination.write(" \"links\": [\n")
+link = link.split('{')
+del link[0]
+j=0
+for edge in link:
+	edge = edge.split(",")
+	if j != 0:
+		destination.write(",\n")
+	destination.write("     {" + edge[0] + ", " + edge[2] + ", \"value\": " + edge[1][11:]+"}")
+	j+=1
+
+destination.write("\n ]\n")
+destination.write("}")
+os.remove(outfilename)

@@ -1,0 +1,2 @@
+J'ai modifié le script graphml_to_JSOND3.py du coup il transforme les graphml en JSON adaptés a D3, faut juste taper
+	python graphml_to_JSOND3.py Donnees/GoT_cum.graphml et ça crée un .JSON dans le même répertoire que le graphml adapté a D3 (normalement '-')
