@@ -337,7 +337,7 @@
      {"id": "n4"},
      {"id": "n5"},
      {"id": "n6"},
-     {"id": "n7"},
+     {"id": "n7"}
  ],
  "links": [
      {"source": "n0",  "target": "n1", "value": 3.76},
@@ -1279,6 +1279,6 @@
      {"source": "n95",  "target": "n335", "value": 4.76},
      {"source": "n247",  "target": "n248", "value": 26.48},
      {"source": "n334",  "target": "n297", "value": 2.77},
-     {"source": "n336",  "target": "n337", "value": 1.879},
+     {"source": "n336",  "target": "n337", "value": 1.879}
  ]
 }
