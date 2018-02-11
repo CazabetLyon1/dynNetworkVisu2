@@ -50,8 +50,30 @@ d3.json("Donnees/BB_cum_D3.json", function(error, graph) {
           .on("drag", dragged)
           .on("end", dragended));
 
+
   node.append("title")
       .text(function(d) { return d.label; });
+
+  node.append("image")
+      //.attr("xlink:href", function(d) { return d.photo; })
+      //.attr("xlink:href", "Donnees/Photos/BB/Walter_White.jpg" )
+      .attr("xlink:href", "https://github.com/favicon.ico" )
+      .attr("x", -8)
+      .attr("y", -8)
+      .attr("width", 16)
+      .attr("height", 16);
+
+
+console.log(node);
+  /*
+  node.append("image")
+      .text(function(d) {
+        if (d.photo !== null)
+        {
+        console.log(d.photo);
+        return d.photo; });
+*/
+
 
   simulation
       .nodes(graph.nodes)

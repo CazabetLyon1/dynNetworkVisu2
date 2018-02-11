@@ -1,0 +1,35 @@
+RŽseaux dynamiques
+
+
+=> Intro
+
+	=> Graphe reprŽsentant les interactions des personnages dÕune sŽrie au cours des saisons
+	=> PrŽsentation des membres de lÕŽquipe
+
+
+
+=> DŽfinition des thermes techniques
+
+	=> QuÕest quÕun rŽseau dynamique
+
+
+
+=> Le projet (le site) 
+	
+	=> Thomas va expliquer sa partie 
+	=> Linsay va expliquer sa partie
+	=> Gwen va expliquer sa partie
+
+
+
+=> Les difficultŽs rencontrŽs 
+
+	=> Les solutions apportŽs pour ces problmes
+
+
+
+=> Les points ˆ amŽliorer
+
+
+
+=> Conclusion 
