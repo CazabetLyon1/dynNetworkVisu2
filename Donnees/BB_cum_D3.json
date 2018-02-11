@@ -165,7 +165,7 @@
      {"id": "n3", "label": "Hank Schrader"},
      {"id": "n4", "label": "Union Rep"},
      {"id": "n5", "label": "APD Officer"},
-     {"id": "n6", "label": "Walter White", "group": 2, "photo": "Photos/BB/Walter_White.jpg"},
+     {"id": "n6", "label": "Walter White", "group": 3, "image": "Donnees/Photos/BB/Walter_White.jpg"},
      {"id": "n7", "label": "Adam Pinkman"}
  ],
  "links": [

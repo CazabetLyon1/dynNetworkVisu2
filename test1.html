@@ -3,13 +3,25 @@
 <style>
 
 .links line {
+  fill: none;
   stroke: #999;
   stroke-opacity: 0.6;
+  stroke-width: 1.5px;
+
 }
 
 .nodes circle {
+  /*fill: #897;*/
+  /*fill: url("http://www.fondos10.net/wp-content/uploads/2010/04/Hermoso-tigre.jpg");*/
+  /*background-image: url("http://www.fondos10.net/wp-content/uploads/2010/04/Hermoso-tigre.jpg");*/
   stroke: #fff;
   stroke-width: 1.5px;
+}
+
+
+text {
+  font: 10px sans-serif;
+  pointer-events: none;
 }
 
 </style>
@@ -28,6 +40,7 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
+
 d3.json("Donnees/BB_cum_D3.json", function(error, graph) {
   if (error) throw error;
 
@@ -43,8 +56,10 @@ d3.json("Donnees/BB_cum_D3.json", function(error, graph) {
     .selectAll("circle")
     .data(graph.nodes)
     .enter().append("circle")
-      .attr("r", 5)
+      .attr("r", 10)
       .attr("fill", function(d) { return color(d.group); })
+      //.attr("background-image", function(d) { return d.image; })
+      //.attr("fill", function(d) { return d.image; })//
       .call(d3.drag()
           .on("start", dragstarted)
           .on("drag", dragged)
@@ -53,18 +68,57 @@ d3.json("Donnees/BB_cum_D3.json", function(error, graph) {
 
   node.append("title")
       .text(function(d) { return d.label; });
-
+/*
   node.append("image")
-      //.attr("xlink:href", function(d) { return d.photo; })
+      //.attr("xlink:href", function(d) { return d.image; })
       //.attr("xlink:href", "Donnees/Photos/BB/Walter_White.jpg" )
-      .attr("xlink:href", "https://github.com/favicon.ico" )
+      .attr("xlink:href", "http://www.fondos10.net/wp-content/uploads/2010/04/Hermoso-tigre.jpg" )
+      .attr("innerHTML", "http://www.fondos10.net/wp-content/uploads/2010/04/Hermoso-tigre.jpg")
       .attr("x", -8)
       .attr("y", -8)
       .attr("width", 16)
       .attr("height", 16);
+*/
+  node.append("image")
+    .attr("xlink:href", function(d) { return d.image; });
 
+  node.append("text")
+      .text(function(d) { return d.label; });
 
-console.log(node);
+   node.append("id")
+       .text(function(d) { return d.id; });
+
+    node.on("click", function()
+    {
+      var path_image = "<img src=\"Donnees/Photos/BB/Walter_White.jpg\" alt=\"Image\">";
+      var image = document.getElementById('img').attributes[1].value;
+      //console.log(path_image);
+
+      //console.log(node._parents[0].childNodes[165].attributes[1].nodeValue);
+      console.log(image);
+
+      var id = this.childNodes[3].innerHTML;
+      //console.log(this.childNodes[3].innerHTML);
+
+      var node_image = this.childNodes[1].href.baseVal;
+      console.log(this.childNodes[1].href.baseVal);
+
+      if (node_image === "")
+      {
+        image = "Donnees/Photos/Default.png";
+        document.getElementById('img').attributes[1].value = image;
+      }
+      else
+      {
+        image = node_image
+        document.getElementById('img').attributes[1].value = image;
+      }
+      console.log(image);
+    });
+
+//node._parents[0].childNodes[0].childNodes[1].attributes[3].nodeValue
+//
+
   /*
   node.append("image")
       .text(function(d) {
@@ -73,6 +127,7 @@ console.log(node);
         console.log(d.photo);
         return d.photo; });
 */
+
 
 
   simulation
@@ -113,3 +168,13 @@ function dragended(d) {
 }
 
 </script>
+
+
+<body>
+  <div id="image">
+    <span>
+      Mon texte
+      <img id="img" src="Donnees/Photos/BB/Walter_White.jpg\" alt=\"Image\">
+    </span>
+  <div>
+</body>
