@@ -1,0 +1,24 @@
+.links line
+{
+  fill: none;
+  stroke: #999;
+  stroke-opacity: 0.6;
+  stroke-width: 1.5px;
+}
+
+.nodes circle
+{
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+text
+{
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
+#img
+{
+  width: 8%;
+}
