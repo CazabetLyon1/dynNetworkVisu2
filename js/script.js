@@ -65,7 +65,6 @@ d3.json("Donnees/BB_cum_D3.json", function(error, graph) {
       }
 
       document.getElementById('name').innerHTML = name;
-
     });
 
   simulation
