@@ -13,40 +13,47 @@
 <body>
         <div id="canvas" style="height:900px; width:100%;"></div>
         <script>
-        	var G = new jsnx.Graph();
-                
 
-                G.addNodesFrom([1, 3, 5, 7, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]);
-                G.addEdgesFrom([[1,15], [1,17], [17,3], [19,29]]);
-                var path = jsnx.bidirectionalShortestPath(G, 1, 15);
-                G.node.get(1).color = '#0F0'; // start is green
-                G.node.get(15).color = '#F00'; // end is red
-                G.addNodesFrom(path, {color: '#FFF'});
-                G.addNode(1, {someData: 42});
-                jsnx.draw(G, {
-                    element: '#canvas',  
-                    weighted: true, 
-                    edgeStyle: {
-                        'stroke-width': 10
-                    }
-                });
+        var G = new jsnx.Graph();
+        var idList = [];
 
-                var path = jsnx.bidirectionalShortestPath(G, 15, 3);
-				// A simple way to color all nodes in the path:
-				G.addNodesFrom(path, {color: '#FFF'});
-				// Color the start and end differently
-				G.node.get(15).color = '#0F0'; // start is green
-				G.node.get(3).color = '#F00'; // end is red
-				 
-				jsnx.draw(G, {
-				  element: '#canvas',
-				  withLabels: false,
-				  nodeStyle: {
-				    fill: function(d) {
-				      return d.data.color || '#AAA'; // any node without color is gray
-				    }
-				  }
-				});
+        function loadJSON(callback) {
+		    var xobj = new XMLHttpRequest();
+		    xobj.overrideMimeType("application/json");
+		    xobj.open('GET', 'Donnees/BB_cum_D3.json', true);
+		    xobj.onreadystatechange = function() {
+		        if (xobj.readyState == 4 && xobj.status == "200") {
+		            // .open will NOT return a value but simply returns undefined in async mode so use a callback
+		            callback(xobj.responseText);
+		        }
+		    }
+   			xobj.send(null);
+
+		}
+
+		// Call to function with anonymous callback
+		loadJSON(function(response) {
+		    // Do Something with the response e.g.
+		    jsonresponse = JSON.parse(response);
+		    
+
+		    // Assuming json data is wrapped in square brackets as Drew suggests
+		    for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
+		    	idList.push(i);
+		    	
+		    }
+		});
+		
+		console.log(idList);
+		G.addNodesFrom(idList);
+		jsnx.draw(G, {
+    element: '#canvas',  
+    weighted: true,
+    edgeStyle: {
+        'stroke-width': 10
+    }
+});
+
 
         </script>
 </body>
