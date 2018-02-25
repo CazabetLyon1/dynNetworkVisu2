@@ -39,23 +39,30 @@
 
 		    // Assuming json data is wrapped in square brackets as Drew suggests
 		    for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
-		    	idList.push(i);
+		    	idList.push(jsonresponse.nodes[i].id);
 		    	
 		    }
+
+
+		    for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
+		    	G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
+		    }
+
+		    for (var i = idList.length - 1; i >= 0; i--) {
+		    	if (G.neighbors(idList[i]).length < 2) {G.removeNode(idList[i])}
+		    }
+
+		    G.addNodesFrom(idList);
+		    jsnx.draw(G, {
+    		element: '#canvas',  
+	   		 weighted: true,
+	   		 edgeStyle: {
+	        'stroke-width': 10
+	    	}
+			});
 		});
-		
-		console.log(idList);
-		G.addNodesFrom(idList);
-		jsnx.draw(G, {
-    element: '#canvas',  
-    weighted: true,
-    edgeStyle: {
-        'stroke-width': 10
-    }
-});
 
-
-        </script>
+       </script>
 </body>
 
 </html>
