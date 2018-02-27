@@ -6,9 +6,13 @@
   stroke-width: 1.5px;
 }
 
+.link {
+  stroke: #ccc;
+}
+
 .nodes circle
 {
-  stroke: #fff;
+  stroke: #179;
   stroke-width: 1.5px;
 }
 
