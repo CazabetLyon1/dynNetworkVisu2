@@ -1,7 +1,7 @@
 /* Carousel */
 .carousel-inner img
 {
-    padding-top: 50px;
+    padding-top: 5px;
     width: 100%;
     margin: auto;
 }
@@ -62,16 +62,38 @@ nav #RC3
   stroke-width: 1.5px;
 }
 
-/* Autre */
-text
+/* Graph */
+#graph
 {
-  font: 10px sans-serif;
-  pointer-events: none;
+  padding-top: 5%;
+}
+
+svg
+{
+  padding: 1%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #337ab7;
+  border-radius: 5px;
+}
+
+#image
+{
+  padding: 1%;
+  border: 2px solid #337ab7;
+  border-radius: 5px;
 }
 
 #img
 {
-  width: 8%;
+
+  width: 50%;
+}
+
+text
+{
+  font: 10px sans-serif;
+  pointer-events: none;
 }
 
 

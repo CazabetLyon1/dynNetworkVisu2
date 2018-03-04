@@ -94,16 +94,26 @@
       </nav>
     </header>
 
-    <section>
-      <!-- Graph -->
-      <div>
-        <svg width="960" height="600"></svg>
+    <section id="graph" class="container text-center">
+      <div class="col-xs-8" >
+        <svg viewBox="-80 50 800 200" width="500" height="350"></svg>
       </div>
 
-      <div id="image">
-          <img id="img" src="Donnees/Photos/BB/Walter_White.jpg" alt="Photo">
-          <p id="name">Walter White</p>
+      <div id="image" class="col-xs-4">
+        <ul class="list-unstyled">
+          <li>
+            <div class="alert alert-danger" role="alert">
+              Cliques sur un noeud du graphe !
+            </div>
+          </li>
+          <li>
+            <img id="img" src="Donnees/Photos/BB/Walter_White.jpg" alt="Photo">
+            <h1 id="name">Walter White</h1>
+          </li>
+        <ul>
       </div>
+
+
     </section>
 
     <footer class="nb-footer">
@@ -126,12 +136,10 @@
     			<div class="col-md-3 col-sm-6">
     				<div class="footer-info-single">
     					<h2 class="title"> Gestion du Graphe </h2>
-
     					<ul class="list-unstyled">
                 <li><a href="https://d3js.org/" class="fa fa-angle-double-right">D3</a></li>
     						<li><a href="http://jsnetworkx.org/index.html" class="fa fa-angle-double-right">JsNetworkX</a></li>
     						</ul>
-
     				</div>
     			</div>
 
