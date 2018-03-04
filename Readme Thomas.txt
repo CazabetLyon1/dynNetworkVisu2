@@ -12,9 +12,14 @@
 	L'affichage se fait avec d3 en remplaçant d3 par d3v4 (exemple : var svg = d3.select("svg") --> var svg = d3v4.select("svg"))
 
 
-04/03
+04/03 3:00
 
 	La fonction d'affichage est maintenant dans le fichier "Script_D3.js" et les fonction de traitement du Graph utilisant JsNetworkx (noeuds, voisins, liens etc...) sont dans "script_JsNetworkx.jsz"
 	Pour l'instant les noeuds changent de couleur/taille en fonction de leur nombre de voisins.
 
+	! Je dois revoir le script, certains fichiers JSON ont des caractères qui gênent la lécture !
+
+04/03 4:00
 	
+	Le chargement des plusieurs fichiers de données marche mais pour l'instant ça crée juste de nouveaux graphs pour chaque fichier.
+	 

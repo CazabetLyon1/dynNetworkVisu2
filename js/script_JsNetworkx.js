@@ -1,11 +1,11 @@
-var G = new jsnx.Graph();
-var idList = [];
-var idEdge = [];
+var G;
+var idList;
+var idEdge;
 
-function loadJSON(callback) {
+function loadJSON(JSONfile, callback) {
 	var xobj = new XMLHttpRequest();
 	xobj.overrideMimeType("application/json");
-	xobj.open('GET', 'Donnees/BB_cum_D3.json', true);
+	xobj.open('GET', JSONfile, true);
 	xobj.onreadystatechange = function() {
 		if (xobj.readyState == 4 && xobj.status == "200") {
 			// .open will NOT return a value but simply returns undefined in async mode so use a callback
@@ -19,9 +19,37 @@ function loadJSON(callback) {
 // Call to function with anonymous callback
 
 
-loadJSON(function(response) {
+loadJSON('Donnees/BB_dyn_ts10/BB_S01E01_000_D3.json', function(response) {
 	// Do Something with the response e.g.
 	jsonresponse = JSON.parse(response);
+	G = new jsnx.Graph();
+	idList = [];
+	idEdge = [];
+
+	for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
+		idList.push(jsonresponse.nodes[i]);
+		//console.log(jsonresponse.nodes[i]);
+	}
+	G.addNodesFrom(idList);
+
+	for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
+		idEdge.push(jsonresponse.links[i]);
+		//console.log(jsonresponse.links[i])
+		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
+	}
+
+	//---------- AFFICHAGE D3 ----------
+	affichageD3(idList, idEdge);
+});
+
+//Chargement du 2ème réseau
+setTimeout(function(){
+    loadJSON('Donnees/BB_dyn_ts10/BB_S02E01_138_D3.json', function(response) {
+	// Do Something with the response e.g.
+	jsonresponse = JSON.parse(response);
+	G = new jsnx.Graph();
+	idList = [];
+	idEdge = [];
 
 
 	for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
@@ -36,11 +64,38 @@ loadJSON(function(response) {
 		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
 	}
 
+	//---------- AFFICHAGE D3 ----------
+	affichageD3(idList, idEdge);
+});
+}, 2000);
+
+//Chargement du 3ème réseau
+setTimeout(function(){
+    loadJSON('Donnees/BB_dyn_ts10/BB_S03E13_629_D3.json', function(response) {
+	// Do Something with the response e.g.
+	jsonresponse = JSON.parse(response);
+	G = new jsnx.Graph();
+	idList = [];
+	idEdge = [];
+
+
+	for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
+		idList.push(jsonresponse.nodes[i]);
+		//console.log(jsonresponse.nodes[i]);
+	}
+	G.addNodesFrom(idList);
+
+	for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
+		idEdge.push(jsonresponse.links[i]);
+		//console.log(jsonresponse.links[i])
+		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
+	}
 
 	//---------- AFFICHAGE D3 ----------
 	affichageD3(idList, idEdge);
 });
 
+}, 4000);
 
 
 function tailleDuNoeudVoisin(n){
@@ -49,9 +104,11 @@ function tailleDuNoeudVoisin(n){
 	else if(G.neighbors(n.id).length>5){return 8}
 	else if(G.neighbors(n.id).length>2){return 5}  
 	else{return 3;}*/
-	var voisins = G.neighbors(n.id).length;
-	if (voisins == 1) {return 3;}
-	else {return Math.log(voisins)*7;}
+	if (G.node.get(n.id)!=null) {
+		var voisins = G.neighbors(n.id).length;
+		if (voisins == 1) {return 3;}
+		else {return Math.log(voisins)*7;}
+	}
 }
 
 function couleurDuNoeudVoisin(n){
@@ -59,9 +116,11 @@ function couleurDuNoeudVoisin(n){
 	/*if(G.neighbors(n.id).length>10){return 'Red';} 
 	else if(G.neighbors(n.id).length>5){return 'Blue'} 
 	else{return '#E7EA00';}*/
-	var voisins = G.neighbors(n.id).length;
-	if (voisins>=10) {return "#"+voisins+"0";}
-	else {return "#"+voisins+"00";}
+	if (G.node.get(n.id)!=null) {
+		var voisins = G.neighbors(n.id).length;
+		if (voisins>=10) {return "#"+voisins+"0";}
+		else {return "#"+voisins+"00";}
+	}
 }
 
 /*var width = 1920, height = 1080
