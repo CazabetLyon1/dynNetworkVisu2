@@ -218,16 +218,16 @@ var force = d3.layout.force()
 								},
 								nodeAttr: {
 									r: function(d){
-												if(G.neighbors(d.node).length>10){return 30;} 
-												else if(G.neighbors(d.node).length>5){return 20} 
+												if(G.neighbors(d.node).length>10){return 30;}
+												else if(G.neighbors(d.node).length>5){return 20}
 													else{return 10;}
 												return (G.neighbors(d.node).length)*3},
 										title: function(d) { return d.node;}
 								},
 								nodeStyle: {
 										fill : function(d){
-												if(G.neighbors(d.node).length>10){return 'red';} 
-												else if(G.neighbors(d.node).length>5){return 'blue'} 
+												if(G.neighbors(d.node).length>10){return 'red';}
+												else if(G.neighbors(d.node).length>5){return 'blue'}
 												else{return 'yellow';}},
 								},
 										stroke: 'none',

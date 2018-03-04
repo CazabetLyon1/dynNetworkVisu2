@@ -1,3 +1,47 @@
+/* Carousel */
+.carousel-inner img
+{
+    padding-top: 50px;
+    width: 100%;
+    margin: auto;
+}
+
+/* Navbar */
+.navbar
+{
+    margin-bottom: 0;
+    background-color: #ffffff;
+    border: 0;
+    font-size: 14px;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+.navbar li a, .navbar .navbar-brand
+{
+    color: #29292c;
+}
+
+.navbar-nav li a:hover
+{
+    color: #29292c;
+    background-color : #c0c0c0;
+    font-weight: bold;
+}
+
+.navbar-nav li.active a
+{
+    color: #ffffff;
+    background-color: #29292c;
+}
+
+.navbar-default .navbar-toggle
+{
+    border-color: transparent;
+}
+
+
+/* D3 */
 .links line
 {
   fill: none;
@@ -12,6 +56,7 @@
   stroke-width: 1.5px;
 }
 
+/* Autre */
 text
 {
   font: 10px sans-serif;
