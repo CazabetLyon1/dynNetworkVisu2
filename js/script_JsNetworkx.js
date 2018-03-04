@@ -37,13 +37,11 @@ loadJSON(function(response) {
 	}
 
 
-
-
-
-
 	//---------- AFFICHAGE D3 ----------
+	affichageD3(idList, idEdge);
+});
 
-
+function affichageD3(nodes, edges) {
 	var svg = d3v4.select("svg"),
 	width = +svg.attr("width"),
 	height = +svg.attr("height");
@@ -70,17 +68,17 @@ loadJSON(function(response) {
 	var link = svg.append("g")
 	.attr("class", "links")
 	.selectAll("line")
-	.data(idEdge)
+	.data(edges)
 	.enter().append("line")
 	.attr("stroke-width", function(d) { return Math.sqrt(d.value); });
 
 	var node = svg.append("g")
 	.attr("class", "nodes")
 	.selectAll("circle")
-	.data(idList)
+	.data(nodes)
 	.enter().append("circle")
-	.attr("r", 10)
-	.attr("fill", function(d) { return color(d.group); })
+	.attr("r", function(d){return tailleDuNoeudVoisin(d);})
+	.attr("fill", function(d) { return couleurDuNoeudVoisin(d);})
 	.call(d3v4.drag()
 		.on("start", dragstarted)
 		.on("drag", dragged)
@@ -155,8 +153,28 @@ loadJSON(function(response) {
 		d.fx = null;
 		d.fy = null;
 	}
-});
+}
 
+function tailleDuNoeudVoisin(n){
+	//Retourne la taille du noeud en fonction du nombre de voisins
+	/*if(G.neighbors(n.id).length>10){return 13;} 
+	else if(G.neighbors(n.id).length>5){return 8}
+	else if(G.neighbors(n.id).length>2){return 5}  
+	else{return 3;}*/
+	var voisins = G.neighbors(n.id).length;
+	if (voisins == 1) {return 3;}
+	else {return Math.log(voisins)*7;}
+}
+
+function couleurDuNoeudVoisin(n){
+	//Retourne la couleur du noeud en fonction du nombre de voisins
+	/*if(G.neighbors(n.id).length>10){return 'Red';} 
+	else if(G.neighbors(n.id).length>5){return 'Blue'} 
+	else{return '#E7EA00';}*/
+	var voisins = G.neighbors(n.id).length;
+	if (voisins>=10) {return "#"+voisins+"0";}
+	else {return "#"+voisins+"00";}
+}
 
 /*var width = 1920, height = 1080
 
