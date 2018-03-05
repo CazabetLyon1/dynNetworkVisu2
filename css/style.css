@@ -1,7 +1,7 @@
 /* Carousel */
 .carousel-inner img
 {
-    padding-top: 5px;
+    padding-top: 50px;
     width: 100%;
     margin: auto;
 }
@@ -46,6 +46,32 @@ nav #RC3
     border-color: transparent;
 }
 
+/* Pourquoi */
+#intro
+{
+  margin-top: 60px;
+  margin-bottom: 50px;
+  /*
+  padding: 1%;
+  border: 2px solid #337ab7;
+  border-radius: 5px;*/
+}
+
+#intro h3
+{
+  margin-bottom: 30px;
+}
+
+#list_pourquoi
+{
+  margin-bottom: 50px;
+}
+
+#list_pourquoi p, #list_pourquoi ul li
+{
+  text-align: left;
+  margin-left: 35%;
+}
 
 /* D3 */
 .links line
@@ -66,6 +92,7 @@ nav #RC3
 #graph
 {
   padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 svg
