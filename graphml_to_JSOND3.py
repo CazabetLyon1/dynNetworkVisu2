@@ -85,6 +85,8 @@ for noeud in node:
 	noeud = noeud.split("\"")
 	if i != 0:
 		destination.write(",\n")
+	if noeud[5][-1:] == '\\':
+		noeud[5] = noeud[5][:-1]
 	destination.write("     {\"id\": \"" + noeud[1] +"\", \"label\": \""+ noeud[5] + "\"}")
 	i+=1
 destination.write("\n ],\n")
