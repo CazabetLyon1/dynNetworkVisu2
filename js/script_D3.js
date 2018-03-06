@@ -1,35 +1,27 @@
+var svg = d3v4.select("svg"),
+  width = +svg.attr("width"),
+  height = +svg.attr("height");
+
+  var color = d3v4.scaleOrdinal(d3v4.schemeCategory20);
+
+  var simulation = d3v4.forceSimulation()
+  .force("link", d3v4.forceLink().id(function(d) { return d.id; }))
+  .force("charge", d3v4.forceManyBody())
+  .force("center", d3v4.forceCenter(width / 2, height / 2));
+
+var link;
+var node;
+
 function affichageD3(nodes, edges) {
-  var svg = d3v4.select("svg"),
-  width = +svg.attr("width"),
-  height = +svg.attr("height");
 
-  var color = d3v4.scaleOrdinal(d3v4.schemeCategory20);
-
-  var simulation = d3v4.forceSimulation()
-  .force("link", d3v4.forceLink().id(function(d) { return d.id; }))
-  .force("charge", d3v4.forceManyBody())
-  .force("center", d3v4.forceCenter(width / 2, height / 2));
-
-
-  var svg = d3v4.select("svg"),
-  width = +svg.attr("width"),
-  height = +svg.attr("height");
-
-  var color = d3v4.scaleOrdinal(d3v4.schemeCategory20);
-
-  var simulation = d3v4.forceSimulation()
-  .force("link", d3v4.forceLink().id(function(d) { return d.id; }))
-  .force("charge", d3v4.forceManyBody())
-  .force("center", d3v4.forceCenter(width / 2, height / 2));
-
-  var link = svg.append("g")
+  link = svg.append("g")
   .attr("class", "links")
   .selectAll("line")
   .data(edges)
   .enter().append("line")
   .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
 
-  var node = svg.append("g")
+  node = svg.append("g")
   .attr("class", "nodes")
   .selectAll("circle")
   .data(nodes)
@@ -82,7 +74,16 @@ function affichageD3(nodes, edges) {
   simulation.force("link")
   .links(idEdge);
 
-  function ticked() {
+  
+}
+
+function updateGraph(nodes, edges) {
+
+
+
+} 
+
+function ticked() {
     link
     .attr("x1", function(d) { return d.source.x; })
     .attr("y1", function(d) { return d.source.y; })
@@ -110,4 +111,3 @@ function affichageD3(nodes, edges) {
     d.fx = null;
     d.fy = null;
   }
-}

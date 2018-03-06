@@ -65,7 +65,7 @@ setTimeout(function(){
 	}
 
 	//---------- AFFICHAGE D3 ----------
-	affichageD3(idList, idEdge);
+	updateGraph(idList, idEdge);
 });
 }, 2000);
 
@@ -92,7 +92,7 @@ setTimeout(function(){
 	}
 
 	//---------- AFFICHAGE D3 ----------
-	affichageD3(idList, idEdge);
+	updateGraph(idList, idEdge);
 });
 
 }, 4000);
