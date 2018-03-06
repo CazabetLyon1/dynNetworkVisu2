@@ -6,6 +6,7 @@
     margin: auto;
 }
 
+
 /* Navbar */
 nav #RC3
 {
@@ -47,18 +48,16 @@ nav #RC3
 }
 
 
-  ​
-
 /* Pourquoi */
-#intro
+section #intro
 {
   margin-top: 60px;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 #intro h3
 {
-  margin-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .groupe_pourquoi
@@ -78,6 +77,12 @@ nav #RC3
   font-weight: bold;
 }
 
+#logo
+{
+  margin-bottom: 50px;
+}
+
+
 /* BB */
 #BB
 {
@@ -85,6 +90,7 @@ nav #RC3
   padding-top: 50px;
   margin: auto;
 }
+
 
 /* D3 */
 .links line
@@ -100,6 +106,7 @@ nav #RC3
   stroke: #fff;
   stroke-width: 1.5px;
 }
+
 
 /* Graph */
 #graph
@@ -136,7 +143,7 @@ text
 }
 
 
-/* Footer */ /*337ab7*/
+/* Footer */
 footer
 {
   padding-top: 30px;
@@ -188,7 +195,6 @@ footer.nb-footer .about .social-media ul li a
     color: #b78c33;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
 
 footer.nb-footer .footer-info-single .title
 {

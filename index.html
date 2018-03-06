@@ -76,36 +76,47 @@
       	</a>
       </div>
 
-      <nav class="navbar navbar-light navbar-fixed-top">
+      <nav class="navbar navbar-light navbar-fixed-top" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <a id="RC3" class="navbar-brand" href="#">RC3</a>
           </div>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav pull-right">
             <li><a href="index.html#intro"> Pourquoi ? </a></li>
-            <li><a href="BB.html"> Breaking Bad </a></li>
-            <li><a href="Views/GoT.html"> Games of Thrones </a></li>
-            <li><a href="Views/HoC.html"> House of Cards </a></li>
+            <li class="dropdown">
+              <a href="BB.html" class="dropdown-toggle" data-toggle="dropdown"> Breaking Bad <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="BB.html#"> Résumé </a></li>
+                  <li class="divider"></li>
+                  <li><a href="BB.html#"> Saison 1 </a></li>
+                  <li><a href="BB.html#"> Saison 2 </a></li>
+                  <li><a href="BB.html#"> Saison 3 </a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="GoT.html" class="dropdown-toggle" data-toggle="dropdown"> Games of Thrones <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="GoT.html#"> Résumé </a></li>
+                  <li class="divider"></li>
+                  <li><a href="GoT.html#"> Saison 1 </a></li>
+                  <li><a href="GoT.html#"> Saison 2 </a></li>
+                  <li><a href="GoT.html#"> Saison 3 </a></li>
+                  <li><a href="GoT.html#"> Saison 4 </a></li>
+                  <li><a href="GoT.html#"> Saison 5 </a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="HoC.html" class="dropdown-toggle" data-toggle="dropdown"> House of Cards <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="HoC.html#"> Résumé </a></li>
+                  <li class="divider"></li>
+                  <li><a href="HoC.html#"> Saison 1 </a></li>
+                  <li><a href="HoC.html#"> Saison 2 </a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </nav>
-
-      <!--
-      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-        <button type="button" class="btn btn-secondary">1</button>
-        <button type="button" class="btn btn-secondary">2</button>
-
-        <div class="btn-group" role="group">
-          <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </button>
-          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-            <a class="dropdown-item" href="#">Dropdown link</a>
-            <a class="dropdown-item" href="#">Dropdown link</a>
-          </div>
-        </div>
-      </div>
-    -->
     </header>
 
     <section id="intro" class="text-center">
@@ -130,8 +141,7 @@
         </div>
       </div>
 
-
-      <div class="container">
+      <div class="container" id="logo">
     		<div class="col-sm-4">
     			<a href="BB.html">
     				<img src="Donnees/Photos/BB/logoBB.png" alt="Logo BB" style="width: 100%">
