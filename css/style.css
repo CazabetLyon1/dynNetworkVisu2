@@ -51,10 +51,6 @@ nav #RC3
 {
   margin-top: 60px;
   margin-bottom: 50px;
-  /*
-  padding: 1%;
-  border: 2px solid #337ab7;
-  border-radius: 5px;*/
 }
 
 #intro h3
@@ -62,15 +58,29 @@ nav #RC3
   margin-bottom: 30px;
 }
 
-#list_pourquoi
+.groupe_pourquoi
 {
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
-#list_pourquoi p, #list_pourquoi ul li
+.groupe_pourquoi p, .groupe_pourquoi ul li
 {
   text-align: left;
-  margin-left: 35%;
+  margin-left: 30%;
+}
+
+#list_pourquoi p, #projet p
+{
+  font-weight: bold;
+}
+
+/* BB */
+#BB
+{
+  width: 100%;
+  padding-top: 50px;
+  margin: auto;
 }
 
 /* D3 */
@@ -113,7 +123,6 @@ svg
 
 #img
 {
-
   width: 50%;
 }
 
