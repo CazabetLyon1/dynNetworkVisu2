@@ -1,6 +1,10 @@
 var G;
 var idList;
 var idEdge;
+var episode = listeEpi[0];
+
+initGraph('Donnees/BB_dyn_ts10/'+listeEpi[0]);
+
 
 function loadJSON(JSONfile, callback) {
 	var xobj = new XMLHttpRequest();
@@ -16,62 +20,35 @@ function loadJSON(JSONfile, callback) {
 
 }
 
-// Call to function with anonymous callback
+function initGraph(e){
+	loadJSON(e, function(response) {
+		// Do Something with the response e.g.
+		jsonresponse = JSON.parse(response);
+		G = new jsnx.Graph();
+		idList = [];
+		idEdge = [];
 
+		for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
+			idList.push(jsonresponse.nodes[i]);
+			//console.log(jsonresponse.nodes[i]);
+		}
+		G.addNodesFrom(idList);
 
-loadJSON('Donnees/BB_dyn_ts10/BB_S01E01_000_D3.json', function(response) {
-	// Do Something with the response e.g.
-	jsonresponse = JSON.parse(response);
-	G = new jsnx.Graph();
-	idList = [];
-	idEdge = [];
+		for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
+			idEdge.push(jsonresponse.links[i]);
+			//console.log(jsonresponse.links[i])
+			G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
+		}
 
-	for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
-		idList.push(jsonresponse.nodes[i]);
-		//console.log(jsonresponse.nodes[i]);
-	}
-	G.addNodesFrom(idList);
+		//---------- AFFICHAGE D3 ----------
+		affichageD3(idList, idEdge);
+	});
+}
 
-	for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
-		idEdge.push(jsonresponse.links[i]);
-		//console.log(jsonresponse.links[i])
-		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
-	}
-
-	//---------- AFFICHAGE D3 ----------
-	affichageD3(idList, idEdge);
-});
-
-//Chargement du 2ème réseau
-setTimeout(function(){
-    loadJSON('Donnees/BB_dyn_ts10/BB_S02E01_138_D3.json', function(response) {
-	// Do Something with the response e.g.
-	jsonresponse = JSON.parse(response);
-	G = new jsnx.Graph();
-	idList = [];
-	idEdge = [];
-
-
-	for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
-		idList.push(jsonresponse.nodes[i]);
-		//console.log(jsonresponse.nodes[i]);
-	}
-	G.addNodesFrom(idList);
-
-	for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
-		idEdge.push(jsonresponse.links[i]);
-		//console.log(jsonresponse.links[i])
-		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
-	}
-
-	//---------- AFFICHAGE D3 ----------
-	updateGraph(idList, idEdge);
-});
-}, 2000);
-
-//Chargement du 3ème réseau
-setTimeout(function(){
-    loadJSON('Donnees/BB_dyn_ts10/BB_S03E13_629_D3.json', function(response) {
+function episodeSuivant(){
+		next = listeEpi[listeEpi.indexOf(episode)+1];
+		episode = next;
+    loadJSON('Donnees/BB_dyn_ts10/'+next, function(response) {
 	// Do Something with the response e.g.
 	jsonresponse = JSON.parse(response);
 	G = new jsnx.Graph();
@@ -94,9 +71,36 @@ setTimeout(function(){
 	//---------- AFFICHAGE D3 ----------
 	updateGraph(idList, idEdge);
 });
+}
 
-}, 4000);
+function episodePrecedent(){
+		prev = listeEpi[listeEpi.indexOf(episode)-1];
+		episode = prev;
 
+    loadJSON('Donnees/BB_dyn_ts10/'+prev, function(response) {
+	// Do Something with the response e.g.
+	jsonresponse = JSON.parse(response);
+	G = new jsnx.Graph();
+	idList = [];
+	idEdge = [];
+
+
+	for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
+		idList.push(jsonresponse.nodes[i]);
+		//console.log(jsonresponse.nodes[i]);
+	}
+	G.addNodesFrom(idList);
+
+	for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
+		idEdge.push(jsonresponse.links[i]);
+		//console.log(jsonresponse.links[i])
+		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
+	}
+
+	//---------- AFFICHAGE D3 ----------
+	updateGraph(idList, idEdge);
+});
+}
 
 function tailleDuNoeudVoisin(n){
 	//Retourne la taille du noeud en fonction du nombre de voisins

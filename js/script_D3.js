@@ -78,9 +78,66 @@ function affichageD3(nodes, edges) {
 }
 
 function updateGraph(nodes, edges) {
+  link = link.data(link, function(d) { return d.source.id + "-" + d.target.id; });
+  link.exit().remove();
+  link = svg.append("g")
+  .attr("class", "links")
+  .selectAll("line")
+  .data(edges)
+  .enter().append("line")
+  .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
 
+  node = node.data(node, function(d) { return d.id;});
+  node.exit().remove();
+  node = svg.append("g")
+  .attr("class", "nodes")
+  .selectAll("circle")
+  .data(nodes)
+  .enter().append("circle")
+  .attr("r", function(d){return tailleDuNoeudVoisin(d);})
+  .attr("fill", function(d) { return couleurDuNoeudVoisin(d);})
+  .call(d3v4.drag()
+    .on("start", dragstarted)
+    .on("drag", dragged)
+    .on("end", dragended));
 
+  node.append("title")
+  .text(function(d) { return d.label; });
 
+  node.append("image")
+  .attr("xlink:href", function(d) { return d.image; });
+
+  node.append("text")
+  .text(function(d) { return d.label; });
+
+  node.append("id")
+  .text(function(d) { return d.id; });
+
+  node.on("click", function()
+  {
+    var path_image = "<img src=\"Donnees/Photos/BB/Walter_White.jpg\" alt=\"Image\">";
+    var id = this.childNodes[3].innerHTML;
+    var node_image = this.childNodes[1].href.baseVal;
+    var name = this.childNodes[2].innerHTML;
+
+    if (node_image === "")
+    {
+      default_image = "Donnees/Photos/Default.png";
+      document.getElementById('img').attributes[1].value = default_image;
+    }
+    else
+    {
+      image = node_image
+      document.getElementById('img').attributes[1].value = image;
+    }
+
+    document.getElementById('name').innerHTML = name;
+  });
+
+  
+  simulation.nodes(nodes);
+  simulation.force("link").links(edges);
+  simulation.alpha(1).restart();
 } 
 
 function ticked() {
