@@ -21,5 +21,5 @@
 
 04/03 4:00
 	
-	Le chargement des plusieurs fichiers de données marche mais pour l'instant ça crée juste de nouveaux graphs pour chaque fichier.
+	Le chargement des plusieurs fichiers de données marche mais pour l'instant ça crée juste de nouveaux graphs pour chaque fichier. 
 	 
