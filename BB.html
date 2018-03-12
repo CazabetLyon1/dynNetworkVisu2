@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
 
-    <!-- JQuery -->
-    <script type="text/javascript"></script>
-	  <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
-	  <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="screenfull.js-gh-pages/dist/screenfull.js"></script>
+    <!-- JS && JQuery -->
+    <script type="text/javascript" src="js/scriptSiteWeb.js"></script>
+	  <script type="text/javascript" src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+	  <script type="text/javascript" src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="screenfull.js-gh-pages/dist/screenfull.js"></script>
 
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -55,11 +55,11 @@
             <li class="dropdown">
               <a href="BB.html" class="dropdown-toggle" data-toggle="dropdown"> Breaking Bad <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                  <li><a href="BB.html#"> Résumé </a></li>
+                  <li><a href="BB.html#resume"> Résumé </a></li>
                   <li class="divider"></li>
-                  <li><a href="BB.html#"> Saison 1 </a></li>
-                  <li><a href="BB.html#"> Saison 2 </a></li>
-                  <li><a href="BB.html#"> Saison 3 </a></li>
+                  <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 1 </a></li>
+                  <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 2 </a></li>
+                  <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 3 </a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -87,6 +87,36 @@
         </div>
       </nav>
     </header>
+
+    <section class="resume" id="resume">
+      <div id="resume1" class="visible">
+        <h3>Première saison (2008)</h3>
+        <p>
+          Walter « Walt » White est un professeur de chimie dans un lycée du Nouveau-Mexique et un père de famille de 50 ans. Sa femme Skyler est enceinte et son fils Walter Jr., est handicapé. Son quotidien déjà morose devient carrément noir lorsqu'il apprend qu'il est atteint d'un incurable cancer des poumons. Les médecins ne lui donnent pas plus de deux ans à vivre.
+          Hank, son beau-frère et agent à la DEA, lui fait part des énormes sommes d'argent brassées par le marché de la drogue. Afin d'économiser suffisamment d'argent pour sa famille lorsqu'il ne sera plus de ce monde, Walter décide de s'associer avec Jesse Pinkman, un de ses anciens élèves devenu junkie et accessoirement dealer. Grâce à ses connaissances poussées en chimie, Walter produit de la méthamphétamine à la limite de la perfection tandis que Jesse se charge de la distribution du « Blue Sky », surnom donné au produit en raison de sa pureté et de son aspect bleuté. Le duo improvisé met alors en place un labo itinérant dans un vieux camping-car et commence à « cuisiner » dans le secret absolu au milieu d'un désert d'Albuquerque.
+          Les deux hommes seront vite dépassés par leur double vie et devront faire face à la violente réalité du milieu de la drogue qui les plongera dans une longue descente aux enfers.
+        </p>
+        <a href="https://fr.wikipedia.org/wiki/Breaking_Bad#Première_saison_(2008)"> Wikipédia </a>
+      </div>
+
+      <div id="resume2" class="hidden">
+        <h3>Deuxième saison (2009)</h3>
+        <p>
+          Walter commence à se faire un nom dans le milieu de la drogue, sous le pseudonyme d'Heisenberg. La nouvelle double vie de Walter manque à maintes reprises d'être découverte par sa famille, à qui il a finalement avoué son cancer. Skyler, très inquiète, décide de reprendre son ancien travail de comptable, alors qu'elle est à huit mois de grossesse. Mais ses soupçons envers son mari sont de plus en plus insistants. Walt et Jesse décident de monter leur propre affaire de trafic de drogue. Hank est sur la trace de Heisenberg sans savoir qu'il s'agit de son beau frère Walter White. La confiance de Walter en Jesse s'effrite lorsque celui-ci commence à consommer de la drogue intempestivement. Jesse rencontre alors Jane, sa voisine, ancienne toxicomane. Ils commencent une histoire d'amour et se mettent régulièrement à se droguer à l'héroïne. Jesse commet une grosse erreur en dévoilant à Jane tous les secrets de son activité illégale qu'il entreprend avec Walt. Alors que Walt entre par effraction chez Jesse pour le réveiller, car il est profondément endormi à cause de l'héroïne, il découvre Jane s'étouffant aux cotés de Jesse. Il prend la décision de ne pas lui venir en aide et de la laisser mourir. Après la mort de Jane, Jesse entre dans une terrible dépression tandis que le père de Jane, qui travaille dans un centre de contrôle de circulation aérienne, téléguide la percussion de deux avions faisant des centaines de morts. Peu après, le cancer de Walter est suffisamment freiné pour pouvoir être opéré. Sous l'effet de l'anesthésie, dans un lapsus, Walter révèle à sa femme qu'il a bien un secret.
+        </p>
+        <a href="https://fr.wikipedia.org/wiki/Breaking_Bad#Deuxième_saison_(2009)"> Wikipédia </a>
+      </div>
+
+      <div id="resume3" class="hidden">
+        <h3>Troisième saison (2010)</h3>
+        <p>
+          Skyler, qui vient d'apprendre que son mari menait une double vie ne tarde pas à deviner qu'il trafique dans la drogue. Elle demande le divorce, mais promet de ne pas révéler son secret. Tourmentée, elle finira par avoir une liaison avec son nouveau patron, Ted, qui lui demandera de l'aide pour cacher au fisc les fraudes qu'il a effectuées pour son entreprise.
+          Jesse sort de sa cure de désintoxication et essaie de convaincre Walter de reprendre le trafic. C'est finalement Gus, un éminent trafiquant, qui y parvient. White est associé avec un nouveau chimiste, Gale.
+          Hank, toujours sur la trace d'« Heisenberg », devient de plus en plus dangereux. L'étau se resserre sur Walter, ce qui oblige Jesse à tuer l'innocent Gale.
+        </p>
+        <a href="https://fr.wikipedia.org/wiki/Breaking_Bad#Troisième_saison_(2010)"> Wikipédia </a>
+      </div>
+    </section>
 
     <section id="graph" class="container text-center">
       <div class="col-xs-8" >

@@ -91,6 +91,13 @@ section #intro
   margin: auto;
 }
 
+.resume
+{
+  padding-top: 50px;
+  padding-left: 7%;
+  padding-right: 7%;
+  text-align: justify;
+}
 
 /* D3 */
 .links line
