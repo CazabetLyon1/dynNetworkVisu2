@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
 
-    <!-- JQuery -->
-    <script type="text/javascript"></script>
-	  <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
-	  <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="screenfull.js-gh-pages/dist/screenfull.js"></script>
+    <!-- JS && JQuery -->
+    <script type="text/javascript" src="js/scriptSiteWeb.js"></script>
+	  <script type="text/javascript" src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+	  <script type="text/javascript" src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="screenfull.js-gh-pages/dist/screenfull.js"></script>
 
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -86,12 +86,12 @@
             <li class="dropdown">
               <a href="BB.html" class="dropdown-toggle" data-toggle="dropdown"> Breaking Bad <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                  <li><a href="BB.html#"> Résumé </a></li>
-                  <li class="divider"></li>
-                  <li><a href="BB.html#"> Saison 1 </a></li>
-                  <li><a href="BB.html#"> Saison 2 </a></li>
-                  <li><a href="BB.html#"> Saison 3 </a></li>
-              </ul>
+                <li><a href="BB.html#resume"> Résumé </a></li>
+                <li class="divider"></li>
+                <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 1 </a></li>
+                <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 2 </a></li>
+                <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 3 </a></li>
+            </ul>
             </li>
             <li class="dropdown">
               <a href="GoT.html" class="dropdown-toggle" data-toggle="dropdown"> Games of Thrones <b class="caret"></b></a>
