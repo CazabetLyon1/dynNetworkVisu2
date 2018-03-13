@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head lang="fr">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Required link tags -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-slider/dist/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+
+    <!-- JS && JQuery -->
+    <script type="text/javascript" src="js/scriptSiteWeb.js"></script>
+	  <script type="text/javascript" src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+	  <script type="text/javascript" src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="screenfull.js-gh-pages/dist/screenfull.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="node_modules/bootstrap-slider/dist/bootstrap-slider.js"></script>
+
+    <!-- D3 Scripts -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script>
+      d3v4 = d3
+      window.d3 = null
+    </script>
+    <script src="https://d3js.org/d3.v3.js"></script>
+
+    <!-- JSNetworkX Scripts -->
+    <script src="js/jsnetworkx.js"></script>
+    <script src="js/script_JsNetworkx.js"></script>
+
+    <title>Réseaux dynamiques de GoT</title>
+  </head>
+
+	<body>
+    <header>
+      <img src="Donnees/Photos/GoT/logoGoT.png" alt="Logo GoT" class="imageSerie">
+
+      <nav class="navbar navbar-light navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a id="RC3" class="navbar-brand" href="index.html">RC3</a>
+          </div>
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="index.html#intro"> Pourquoi ? </a></li>
+            <li class="dropdown">
+              <a href="BB.html" class="dropdown-toggle" data-toggle="dropdown"> Breaking Bad <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="BB.html#resume"> Résumé </a></li>
+                  <li class="divider"></li>
+                  <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 1 </a></li>
+                  <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 2 </a></li>
+                  <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 3 </a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="GoT.html" class="dropdown-toggle" data-toggle="dropdown"> Games of Thrones <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="GoT.html#resume"> Résumé </a></li>
+                  <li class="divider"></li>
+                  <li><a href="GoT.html#graph" onclick="getResumeSaison(this);"> Saison 1 </a></li>
+                  <li><a href="GoT.html#graph" onclick="getResumeSaison(this);"> Saison 2 </a></li>
+                  <li><a href="GoT.html#graph" onclick="getResumeSaison(this);"> Saison 3 </a></li>
+                  <li><a href="GoT.html#graph" onclick="getResumeSaison(this);"> Saison 4 </a></li>
+                  <li><a href="GoT.html#graph" onclick="getResumeSaison(this);"> Saison 5 </a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="HoC.html" class="dropdown-toggle" data-toggle="dropdown"> House of Cards <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="HoC.html#"> Résumé </a></li>
+                  <li class="divider"></li>
+                  <li><a href="HoC.html#graph" onclick="getResumeSaison(this);"> Saison 1 </a></li>
+                  <li><a href="HoC.html#graph" onclick="getResumeSaison(this);"> Saison 2 </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="resume" id="resume">
+      <div id="resume1" class="visible">
+        <h3>Première saison (2011)</h3>
+        <p>
+          Sur le continent de Westeros, le roi Robert Baratheon règne sur le Royaume des Sept Couronnes depuis qu'il a mené à la victoire la rébellion contre le roi fou, Aerys II Targaryen, dix-sept ans plus tôt. Son guide et principal conseiller, Jon Arryn, venant de décéder, il part dans le nord du royaume demander à son vieil ami Eddard Stark, seigneur suzerain du Nord et de la maison Stark, de remplacer leur regretté mentor au poste de « Main du roi ». Eddard, peu désireux de quitter ses terres, accepte à contre-cœur de partir à la cour avec ses deux filles Arya et Sansa, alors que Jon Snow, son fils bâtard, se prépare à intégrer la fameuse Garde de nuit : la confrérie protégeant le royaume depuis des siècles à son septentrion, de toute créature pouvant provenir d'au-delà du Mur protecteur. Mais, juste avant le départ pour le Sud, Bran, fils Stark, fait une découverte en escaladant une tour de Winterfell dont découleront des conséquences inattendues…
+          Dans le même temps, sur le continent Est, Viserys Targaryen, héritier « légitime » en exil des Sept Couronnes et fils d'Aerys, projette de marier sa jeune sœur Daenerys au khal Drogo, le chef d'une puissante horde de cavaliers nomades afin de s'en faire des alliés, en vue de la reconquête du royaume. Mais Viserys est presque aussi instable mentalement que son père.
+        </p>
+        <a href="https://fr.wikipedia.org/wiki/Game_of_Thrones#Première_saison_(2011)"> Wikipédia </a>
+      </div>
+
+      <div id="resume2" class="hidden">
+        <h3>Deuxième saison (2012)</h3>
+        <p>
+          Après la mort du roi Robert Baratheon et d'Eddard Stark, la légitimité du roi Joffrey est contestée par Stannis et Renly, frères de Robert, tandis que Sansa Stark est retenue comme otage à Port-Réal. Robb Stark poursuit sa rébellion pour venger son père et libérer sa sœur, bien que personne ne sache où se trouve Arya Stark. Lord Tywin Lannister, père de la Reine régente Cersei et grand-père du roi, qui la détient sans le savoir, continue de son côté à lutter à la fois contre les Baratheon et contre les Nordiens de Robb Stark. Chaque camp cherche de nouveaux alliés, et la guerre se prolonge, ignorant la menace d'au-delà du Mur. En effet, Lord Jeor Mormont continue de guider la Garde de nuit face aux Sauvageons, soutenu par Jon Snow, cherchant désespérément un moyen d'arrêter la marche de leur immense armée vers le sud.
+          De l'autre côté du Détroit, après avoir perdu les Dothraki, Daenerys Targaryen emmène ses dragons jusqu'à la cité de Qarth, où elle espère trouver un appui en vue de reconquérir les Sept-Couronnes.
+        </p>
+        <a href="https://fr.wikipedia.org/wiki/Game_of_Thrones#Deuxième_saison_(2012)"> Wikipédia </a>
+      </div>
+
+      <div id="resume3" class="hidden">
+        <h3>Troisième saison (2013)</h3>
+        <p>
+          Après les batailles de la saison précédente, le conflit s'apaise : moins de combats et plus de diplomatie. Alors que la guerre continue entre les forces du Nord sous la bannière de Robb Stark et celles du roi et de la famille Lannister, l'accent est mis sur les alliances entre les différentes factions qui luttent pour le pouvoir. Joffrey prépare son mariage avec Margaery Tyrell, Tywin Lannister organise des mariages prestigieux pour ses deux enfants disponibles et Robb doit offrir la main de son oncle pour espérer regagner le soutien de la maison Frey après avoir manqué à sa parole et rompu ses fiançailles avec l'une de ses filles. Le fameux mariage se termine dans un bain de sang - Walder Frey s'étant entre-temps rallié à la cause des Lannister.
+          Pendant ce temps, Stannis désespère à Peyredragon, car si Melisandre lui propose une magie puissante pour conquérir le Trône de fer, son fidèle Davos fait tout pour éviter un cruel sacrifice. Theon subit les pires tortures aux mains d'un personnage étrange qui refuse de lui révéler son nom. Brienne et Jaime Lannister continuent leur route vers Port-Réal dans une région dévastée, leur relation se renforçant au fil des péripéties.
+          En Essos, Daenerys réussit à libérer les esclaves des cités esclavagistes d'Astapor et de Yunkaï et à se constituer une puissante armée d'Immaculés. Elle réussit également à se faire de nouveaux alliés et décide de marcher vers la troisième et dernière cité esclavagiste de la Baie des Serfs : Meereen.
+        </p>
+        <a href="https://fr.wikipedia.org/wiki/Game_of_Thrones#Troisième_saison_(2013)"> Wikipédia </a>
+      </div>
+
+      <div id="resume4" class="hidden">
+        <h3>Quatrième saison (2014)</h3>
+        <p>
+          L'emprise des Lannister sur le Trône de fer est désormais totale, après le massacre des Noces Pourpres, qui a vu la mort de nombreux partisans du camp Stark et de fait brisé le soulèvement du Nord.
+          Alors que Stannis Baratheon poursuit la reconstruction de son armée à Peyredragon, un danger imminent arrive du Sud, en la personne d'Oberyn Martell. Ce dernier, arrivé à Port-Réal pour le mariage du roi Joffrey et de sa fiancée Margaery Tyrell, est habité par un désir de vengeance.
+          Au Nord, la Garde de nuit, affaiblie, semble dépassée par l’avancée de l’armée des Sauvageons de Mance Rayder, elle-même poursuivie par un ennemi plus redoutable : les Marcheurs blancs.
+          Daenerys réussit à prendre la ville de Meereen, à y abolir l'esclavage et à y imposer son autorité en tant que reine. Cependant, certains événements remettent en question la loyauté de certains de ses alliés.
+        </p>
+        <a href="https://fr.wikipedia.org/wiki/Game_of_Thrones#Quatrième_saison_(2014)"> Wikipédia </a>
+      </div>
+
+      <div id="resume5" class="hidden">
+        <h3>Cinquième saison (2015)</h3>
+        <p>
+          L'influence des Lannister est ébranlée : Tywin est mort. Cersei, dont l'autorité est contestée, y compris dans sa propre maison, doit faire face à l'influence croissante de sa belle-fille, Margaery Tyrell, sur son fils, le roi Tommen. De son côté, Jaime part à Dorne, pour protéger sa fille Myrcella, en danger depuis la mort d'Oberyn Martell. Quant à Tyrion, accompagné dans sa fuite par Varys, il part à la rencontre de Daenerys qui, elle, doit faire face à des mouvements de rébellion de la population de Meereen, qui ne l'accepte pas.
+          Parallèlement, les filles Stark doivent faire face à de nouveaux défis : Arya, à la recherche de Jaqen H'ghar à Braavos, recherche le moyen de se venger. Sansa, manipulée par Littlefinger, doit se marier avec Ramsay Bolton, nouveau maître de Winterfell, fils bâtard légitimé de Roose Bolton (meurtrier de Robb Stark).
+          Enfin Jon Snow, vainqueur des sauvageons, nouveau Lord Commandant, est confronté à Stannis Baratheon, qui souhaite faire de lui un Stark pour l'aider dans son projet de reconquête du Nord. Mais Jon est trahi et tué par ses frères d'armes, qui l'accusent de trahison.
+        </p>
+        <a href="https://fr.wikipedia.org/wiki/Game_of_Thrones#Cinquième_saison_(2015)"> Wikipédia </a>
+      </div>
+    </section>
+
+    <section id="graph" class="container text-center">
+      <div class="col-xs-8">
+        <svg viewBox="-80 50 800 200" width="500" height="350"></svg>
+      </div>
+
+      <div id="image" class="col-xs-4">
+        <ul class="list-unstyled">
+          <li>
+            <div class="alert alert-danger" role="alert">
+              Cliques sur un noeud du graphe !
+            </div>
+          </li>
+          <li>
+            <!--
+            <img id="img" src="Donnees/Photos/BB/Walter_White.jpg" alt="Photo">
+            <h1 id="name">Walter White</h1>
+          -->
+          </li>
+        <ul>
+      </div>
+    </section>
+
+    <footer class="nb-footer">
+    	<div class="text-center">
+    		<a class="up-arrow" href="#" data-toggle="tooltip" title="Haut de page">
+    			<span class="glyphicon glyphicon-chevron-up"></span>
+    		</a>
+    	</div>
+
+    	<div class="container text-center">
+    			<div class="col-md-3 col-sm-6">
+    				<div class="footer-info-single">
+    					<h2 class="title"> Gestion des Données </h2>
+    					<ul class="list-unstyled">
+    						<li><a href="https://jquery.com/" class="fa fa-angle-double-right">JQuery</a></li>
+    					</ul>
+    				</div>
+    			</div>
+
+    			<div class="col-md-3 col-sm-6">
+    				<div class="footer-info-single">
+    					<h2 class="title"> Gestion du Graphe </h2>
+    					<ul class="list-unstyled">
+                <li><a href="https://d3js.org/" class="fa fa-angle-double-right">D3</a></li>
+    						<li><a href="http://jsnetworkx.org/index.html" class="fa fa-angle-double-right">JsNetworkX</a></li>
+    						</ul>
+    				</div>
+    			</div>
+
+    			<div class="col-md-3 col-sm-6">
+    				<div class="footer-info-single">
+    					<h2 class="title"> Gestion du Site </h2>
+    					<ul class="list-unstyled">
+    						<li><a href="https://getbootstrap.com/" class="fa fa-angle-double-right">BootStrap</a></li>
+                <li><a href="https://www.w3schools.com" class="fa fa-angle-double-right">W3School</a></li>
+    					</ul>
+    				</div>
+    			</div>
+
+    			<div class="col-md-3 col-sm-6">
+    				<div class="footer-info-single">
+    					<h2 class="title">A propos de nous</h2>
+    					<p>3 étudiants - Licence Informatique - Université Claude Bernard Lyon 1</p>
+    					<p> Gwénola Biermé <br> Thomas Labrux <br> Lindsay Lahely </p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+
+    	<section class="copyright">
+    		<div class="container">
+    			<div class="row">
+    				<div class="text-center">
+    					<p>Copyright © 2018 - LifProjet - RC3</p>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    </footer>
+  </body>
+</html>
