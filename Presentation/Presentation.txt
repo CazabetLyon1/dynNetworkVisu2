@@ -1,0 +1,55 @@
+Intro
+
+Présentation des membres du groupe :)
+Nous sommes 3 étudiants en troisième année de licence informatique 
+
+Sujet 
+- Analyse d'interactions entre les personnages de séries sous forme de graphe 
+ - Visualisation des évolutions de ces interactions (réseau dynamique)
+- Mise en place d'un site web 
+ - Choix de la série à visualiser (GoT, BB, HoC)
+ - Visualisation du graphe qui évolue au fils de la série
+
+
+
+
+Définition des thermes techniques 
+- Réseaux dynamiques : Evolution d'un réseau au fur et à mesure que l'on lui fournit des nouvelles données
+
+
+
+
+
+Le projet
+- Génération de graphes
+	
+	Analyse des données fournit par notre encadrant (liens entre les personnages)
+	Mise en valeur de cette analyse
+ 		- en mettant des couleurs aux noeuds
+ 		- en grossissant les noeuds en fonction de l'importance des personnages
+
+
+
+- Site web
+	Accès rapide et faciles au différentes séries
+	Réalisation d'une interface pour permettre de visualiser les différents graphes
+	Mise à dispositions de résumés des différentes series 
+
+
+
+Les difficultés rencontrées
+- Back End avec JS NetxorkX et Front EnD avec D3
+	Problèmes de compatibilités de versions
+
+
+
+
+Pour aller plus loin
+
+
+
+
+
+
+
+Conclusion
