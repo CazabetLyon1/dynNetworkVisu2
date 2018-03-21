@@ -14,17 +14,15 @@
 
     <!-- JS && JQuery -->
     <script type="text/javascript" src="js/scriptSiteWeb.js"></script>
-	  <script type="text/javascript" src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
-	  <script type="text/javascript" src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="screenfull.js-gh-pages/dist/screenfull.js"></script>
 
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script src="node_modules/bootstrap-slider/dist/bootstrap-slider.js"></script>
+    
+  
 
     <!-- D3 Scripts -->
     <script src="https://d3js.org/d3.v4.js"></script>
@@ -34,9 +32,17 @@
     </script>
     <script src="https://d3js.org/d3.v3.js"></script>
 
-    <!-- JSNetworkX Scripts -->
-    <script src="js/jsnetworkx.js"></script>
-    <script src="js/script_JsNetworkx.js"></script>
+    <script>
+  var listeEpi;
+    $.ajax({
+     url: 'php/exec_node.php?serie=BB_dyn_ts10',
+     async: false,
+     success: function (response){listeEpi = response.split('§')}
+   });
+ </script>
+ 
+
+
 
     <title>Réseaux dynamiques de BB</title>
   </head>
@@ -127,7 +133,7 @@
         <ul class="list-unstyled">
           <li>
             <div class="alert alert-danger" role="alert">
-              Cliques sur un noeud du graphe !
+              Clique sur un noeud du graphe !
             </div>
           </li>
           <li>
@@ -195,5 +201,10 @@
     		</div>
     	</section>
     </footer>
+
+    <!-- JSNetworkX Scripts -->
+    <script src="js/jsnetworkx.js"></script>
+    <script src="js/script_JsNetworkx.js"></script>
+    <script src="js/script_D3.js"></script>
   </body>
 </html>

@@ -34,9 +34,14 @@
     </script>
     <script src="https://d3js.org/d3.v3.js"></script>
 
-    <!-- JSNetworkX Scripts -->
-    <script src="js/jsnetworkx.js"></script>
-    <script src="js/script_JsNetworkx.js"></script>
+    <script>
+  var listeEpi;
+    $.ajax({
+     url: 'php/exec_node.php?serie=GoT_dyn_ts10',
+     async: false,
+     success: function (response){listeEpi = response.split('§')}
+   });
+ </script>
 
     <title>Réseaux dynamiques de GoT</title>
   </head>
@@ -148,7 +153,7 @@
         <ul class="list-unstyled">
           <li>
             <div class="alert alert-danger" role="alert">
-              Cliques sur un noeud du graphe !
+              Clique sur un noeud du graphe !
             </div>
           </li>
           <li>
@@ -218,5 +223,10 @@
     		</div>
     	</section>
     </footer>
+
+    <!-- JSNetworkX Scripts -->
+    <script src="js/jsnetworkx.js"></script>
+    <script src="js/script_JsNetworkx.js"></script>
+    <script src="js/script_D3.js"></script>
   </body>
 </html>
