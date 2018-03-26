@@ -78,7 +78,7 @@ var simulation = d3v4.forceSimulation()
   simulation.force("link")
   .links(idEdge);
 
-  
+
 }
 
 function updateGraph(nodes, edges) {
@@ -119,30 +119,43 @@ function updateGraph(nodes, edges) {
 
   node.on("click", function()
   {
-    var path_image = "<img src=\"Donnees/Photos/BB/Walter_White.jpg\" alt=\"Image\">";
-    var id = this.childNodes[3].innerHTML;
-    var node_image = this.childNodes[1].href.baseVal;
-    var name = this.childNodes[2].innerHTML;
-
-    if (node_image === "")
+    var chemin = document.location.pathname;
+    var fichierHTML = chemin.substring(chemin.lastIndexOf( "/" )+1);
+    if(fichierHTML === "BB.html")
     {
-      default_image = "Donnees/Photos/Default.png";
-      document.getElementById('img').attributes[1].value = default_image;
-    }
-    else
-    {
-      image = node_image
-      document.getElementById('img').attributes[1].value = image;
-    }
+      var path_image = "<img src=\"Donnees/Photos/BB/Walter_White.jpg\" alt=\"Image\">";
+      var id = this.childNodes[3].innerHTML;
+      var node_image = this.childNodes[1].href.baseVal;
+      var name = this.childNodes[2].innerHTML;
 
-    document.getElementById('name').innerHTML = name;
+      if (node_image === "")
+      {
+        default_image = "Donnees/Photos/Default.png";
+        document.getElementById('img').attributes[1].value = default_image;
+      }
+      else
+      {
+        image = node_image
+        document.getElementById('img').attributes[1].value = image;
+      }
+
+      document.getElementById('name').innerHTML = name;
+    }
+    else if(fichierHTML === "GoT.html")
+    {
+
+    }
+    else if(fichierHTML === "HoC.html")
+    {
+
+    }
   });
 
-  
+
   simulation.nodes(nodes);
   simulation.force("link").links(edges);
   simulation.alpha(1).restart();
-} 
+}
 
 function ticked() {
   link

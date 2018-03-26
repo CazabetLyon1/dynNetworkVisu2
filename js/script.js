@@ -19,11 +19,10 @@ var G = new jsnx.Graph();
         loadJSON(function(response) {
             // Do Something with the response e.g.
             jsonresponse = JSON.parse(response);
-            
+
 
             for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
                 idList.push(jsonresponse.nodes[i].id);
-                console.log("nique ta mere");
             }
 
 
@@ -37,7 +36,7 @@ var G = new jsnx.Graph();
 
             G.addNodesFrom(idList);
             jsnx.draw(G, {
-            element: '#canvas',  
+            element: '#canvas',
              weighted: true,
              edgeStyle: {
             'stroke-width': 10

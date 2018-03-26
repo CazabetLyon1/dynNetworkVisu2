@@ -25,16 +25,17 @@
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script src="node_modules/bootstrap-slider/dist/bootstrap-slider.js"></script>
-    
+
 
     <script>
-  var listeEpi;
-    $.ajax({
-     url: 'php/exec_node.php?serie=HoC_dyn_ts10',
-     async: false,
-     success: function (response){listeEpi = response.split('§')}
-   });
- </script>
+      var listeEpi;
+        $.ajax({
+         url: 'php/exec_node.php?serie=HoC_dyn_ts10',
+         async: false,
+         success: function (response){listeEpi = response.split('§')}
+       });
+       console.log(listeEpi);
+     </script>
 
     <!-- D3 Scripts -->
     <script src="https://d3js.org/d3.v4.js"></script>
@@ -45,13 +46,13 @@
     <script src="https://d3js.org/d3.v3.js"></script>
 
     <script>
-  var listeEpi;
-    $.ajax({
-     url: 'php/exec_node.php?serie=HoC_dyn_ts10',
-     async: false,
-     success: function (response){listeEpi = response.split('§')}
-   });
- </script>
+      var listeEpi;
+        $.ajax({
+         url: 'php/exec_node.php?serie=HoC_dyn_ts10',
+         async: false,
+         success: function (response){listeEpi = response.split('§')}
+       });
+     </script>
 
     <title>Réseaux dynamiques de HoC</title>
   </head>
@@ -136,10 +137,8 @@
             </div>
           </li>
           <li>
-            <!--
-            <img id="img" src="Donnees/Photos/BB/Walter_White.jpg" alt="Photo">
-            <h1 id="name">Walter White</h1>
-          -->
+            <img id="img" src="Donnees/Photos/HoC/Frank_Underwood.jpg" alt="Photo">
+            <h1 id="name">Frank Underwood</h1>
           </li>
         <ul>
       </div>

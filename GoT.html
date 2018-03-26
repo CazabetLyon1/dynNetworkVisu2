@@ -35,13 +35,14 @@
     <script src="https://d3js.org/d3.v3.js"></script>
 
     <script>
-  var listeEpi;
-    $.ajax({
-     url: 'php/exec_node.php?serie=GoT_dyn_ts10',
-     async: false,
-     success: function (response){listeEpi = response.split('§')}
-   });
- </script>
+      var listeEpi;
+        $.ajax({
+         url: 'php/exec_node.php?serie=GoT_dyn_ts10',
+         async: false,
+         success: function (response){listeEpi = response.split('§')}
+       });
+       console.log(listeEpi);
+     </script>
 
     <title>Réseaux dynamiques de GoT</title>
   </head>
@@ -157,10 +158,8 @@
             </div>
           </li>
           <li>
-            <!--
-            <img id="img" src="Donnees/Photos/BB/Walter_White.jpg" alt="Photo">
-            <h1 id="name">Walter White</h1>
-          -->
+            <img id="img" src="Donnees/Photos/GoT/Daenerys_Targaryen.jpg" alt="Photo">
+            <h1 id="name">Daenerys Targaryen</h1>
           </li>
         <ul>
       </div>

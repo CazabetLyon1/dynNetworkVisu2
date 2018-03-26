@@ -1,11 +1,33 @@
 var G;
 var idList;
 var idEdge;
-listeEpi = listeEpi.sort();
-if(listeEpi[0] == "") listeEpi.splice(0, 1);
-var episode = listeEpi[0];
 
-initGraph('Donnees/BB_dyn_ts10/'+listeEpi[0]);
+var chemin = document.location.pathname;
+var fichierHTML = chemin.substring(chemin.lastIndexOf( "/" )+1);
+
+if(fichierHTML === "BB.html")
+{
+	listeEpi = listeEpi.sort();
+	if(listeEpi[0] == "") listeEpi.splice(0, 1);
+	var episode = listeEpi[0];
+	initGraph('Donnees/BB_dyn_ts10/'+listeEpi[0]);
+}
+else if(fichierHTML === "GoT.html")
+{
+	listeEpi = listeEpi.sort();
+	if(listeEpi[0] == "") listeEpi.splice(0, 1);
+	var episode = listeEpi[0];
+	initGraph('Donnees/GoT_dyn_ts10/'+listeEpi[0]);
+}
+else if(fichierHTML === "HoC.html")
+{
+	listeEpi = listeEpi.sort();
+	if(listeEpi[0] == "") listeEpi.splice(0, 1);
+	var episode = listeEpi[0];
+	initGraph('Donnees/HoC_dyn_ts10/'+listeEpi[0]);
+}
+
+
 
 
 function loadJSON(JSONfile, callback) {
@@ -107,9 +129,9 @@ function episodePrecedent(){
 
 function tailleDuNoeudVoisin(n){
 	//Retourne la taille du noeud en fonction du nombre de voisins
-	/*if(G.neighbors(n.id).length>10){return 13;} 
+	/*if(G.neighbors(n.id).length>10){return 13;}
 	else if(G.neighbors(n.id).length>5){return 8}
-	else if(G.neighbors(n.id).length>2){return 5}  
+	else if(G.neighbors(n.id).length>2){return 5}
 	else{return 3;}*/
 	if (G.node.get(n.id)!=null) {
 		var voisins = G.neighbors(n.id).length;
@@ -120,8 +142,8 @@ function tailleDuNoeudVoisin(n){
 
 function couleurDuNoeudVoisin(n){
 	//Retourne la couleur du noeud en fonction du nombre de voisins
-	/*if(G.neighbors(n.id).length>10){return 'Red';} 
-	else if(G.neighbors(n.id).length>5){return 'Blue'} 
+	/*if(G.neighbors(n.id).length>10){return 'Red';}
+	else if(G.neighbors(n.id).length>5){return 'Blue'}
 	else{return '#E7EA00';}*/
 	if (G.node.get(n.id)!=null) {
 		var voisins = G.neighbors(n.id).length;
@@ -190,16 +212,16 @@ var force = d3.layout.force()
 								},
 								nodeAttr: {
 									r: function(d){
-												if(G.neighbors(d.node).length>10){return 30;} 
-												else if(G.neighbors(d.node).length>5){return 20} 
+												if(G.neighbors(d.node).length>10){return 30;}
+												else if(G.neighbors(d.node).length>5){return 20}
 													else{return 10;}
 												return (G.neighbors(d.node).length)*3},
 										title: function(d) { return d.node;}
 								},
 								nodeStyle: {
 										fill : function(d){
-												if(G.neighbors(d.node).length>10){return 'red';} 
-												else if(G.neighbors(d.node).length>5){return 'blue'} 
+												if(G.neighbors(d.node).length>10){return 'red';}
+												else if(G.neighbors(d.node).length>5){return 'blue'}
 												else{return 'yellow';}},
 								},
 										stroke: 'none',

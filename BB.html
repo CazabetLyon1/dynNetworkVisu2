@@ -21,8 +21,6 @@
 
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-  
 
     <!-- D3 Scripts -->
     <script src="https://d3js.org/d3.v4.js"></script>
@@ -32,15 +30,27 @@
     </script>
     <script src="https://d3js.org/d3.v3.js"></script>
 
+    <!-- PHP Scripts -->
     <script>
-  var listeEpi;
-    $.ajax({
-     url: 'php/exec_node.php?serie=BB_dyn_ts10',
-     async: false,
-     success: function (response){listeEpi = response.split('§')}
-   });
- </script>
- 
+      var listeEpi;
+        $.ajax({
+         url: 'php/exec_node.php?serie=BB_dyn_ts10',
+         async: false,
+         success: function (response){listeEpi = response.split('§')}
+       });
+       //console.log(listeEpi);
+     </script>
+
+     <script>
+       var listePhoto;
+         $.ajax({
+          url: 'php/exec_photo.php?BB',
+          async: false,
+          success: function (response){listePhoto = response.split('§')}
+        });
+        console.log(listePhoto);
+      </script>
+
 
 
 
