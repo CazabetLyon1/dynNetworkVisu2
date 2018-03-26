@@ -34,16 +34,14 @@
          async: false,
          success: function (response){listeEpi = response.split('§')}
        });
-       //console.log(listeEpi);
      </script>
      <script>
        var listePhoto;
          $.ajax({
-          url: 'php/exec_photo.php?photo=BB',
+          url: 'php/exec_photo.php?serie=BB',
           async: false,
           success: function (response){listePhoto = response.split('§')}
         });
-        console.log(listePhoto);
       </script>
 
       <!-- D3 Scripts -->
@@ -158,7 +156,7 @@
             </div>
           </li>
           <li>
-            <img id="img" src="Donnees/Photos/BB/Walter_White.jpg" alt="Photo">
+            <img id="img" src="Donnees/Photos/BB/Walter White.jpg" alt="Photo">
             <h1 id="name">Walter White</h1>
           </li>
         <ul>

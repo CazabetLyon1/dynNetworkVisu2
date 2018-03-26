@@ -52,23 +52,80 @@ var simulation = d3v4.forceSimulation()
 
   node.on("click", function()
   {
-    var path_image = "<img src=\"Donnees/Photos/BB/Walter_White.jpg\" alt=\"Image\">";
+    var chemin = document.location.pathname;
+    var fichierHTML = chemin.substring(chemin.lastIndexOf( "/" )+1);
+
     var id = this.childNodes[3].innerHTML;
-    var node_image = this.childNodes[1].href.baseVal;
     var name = this.childNodes[2].innerHTML;
+    default_image = "Donnees/Photos/Default.png";
 
-    if (node_image === "")
-    {
-      default_image = "Donnees/Photos/Default.png";
-      document.getElementById('img').attributes[1].value = default_image;
-    }
-    else
-    {
-      image = node_image
-      document.getElementById('img').attributes[1].value = image;
-    }
+    listePhoto = listePhoto.sort();
+    //if(listePhoto[0] == "") listePhoto.splice(0, 1);
+    //compter le nombre de photos
 
-    document.getElementById('name').innerHTML = name;
+    if(fichierHTML === "BB.html")
+    {
+      var i;
+      var photoOK = false;
+      for (i = 0; i < 20; i++)
+      {
+        var photo = listePhoto[i];
+        if ((name + ".jpg") === photo)
+        {
+          image = "Donnees/Photos/BB/" + photo;
+          document.getElementById('img').attributes[1].value = image;
+          photoOK = true;
+        }
+      }
+      if (photoOK === false)
+      {
+        document.getElementById('img').attributes[1].value = default_image;
+      }
+
+      document.getElementById('name').innerHTML = name;
+    }
+    else if(fichierHTML === "GoT.html")
+    {
+      var i;
+      var photoOK = false;
+      for (i = 0; i < 20; i++)
+      {
+        var photo = listePhoto[i];
+        if ((name + ".jpg") === photo)
+        {
+          image = "Donnees/Photos/GoT/" + photo;
+          document.getElementById('img').attributes[1].value = image;
+          photoOK = true;
+        }
+      }
+      if (photoOK === false)
+      {
+        document.getElementById('img').attributes[1].value = default_image;
+      }
+
+      document.getElementById('name').innerHTML = name;
+    }
+    else if(fichierHTML === "HoC.html")
+    {
+      var i;
+      var photoOK = false;
+      for (i = 0; i < 20; i++)
+      {
+        var photo = listePhoto[i];
+        if ((name + ".jpg") === photo)
+        {
+          image = "Donnees/Photos/HoC/" + photo;
+          document.getElementById('img').attributes[1].value = image;
+          photoOK = true;
+        }
+      }
+      if (photoOK === false)
+      {
+        document.getElementById('img').attributes[1].value = default_image;
+      }
+
+      document.getElementById('name').innerHTML = name;
+    }
   });
 
   simulation
@@ -121,33 +178,77 @@ function updateGraph(nodes, edges) {
   {
     var chemin = document.location.pathname;
     var fichierHTML = chemin.substring(chemin.lastIndexOf( "/" )+1);
+
+    var id = this.childNodes[3].innerHTML;
+    var name = this.childNodes[2].innerHTML;
+    default_image = "Donnees/Photos/Default.png";
+
+    listePhoto = listePhoto.sort();
+    //if(listePhoto[0] == "") listePhoto.splice(0, 1);
+    //compter le nombre de photos
+
     if(fichierHTML === "BB.html")
     {
-      var path_image = "<img src=\"Donnees/Photos/BB/Walter_White.jpg\" alt=\"Image\">";
-      var id = this.childNodes[3].innerHTML;
-      var node_image = this.childNodes[1].href.baseVal;
-      var name = this.childNodes[2].innerHTML;
-
-      if (node_image === "")
+      var i;
+      var photoOK = false;
+      for (i = 0; i < 20; i++)
       {
-        default_image = "Donnees/Photos/Default.png";
-        document.getElementById('img').attributes[1].value = default_image;
+        var photo = listePhoto[i];
+        if ((name + ".jpg") === photo)
+        {
+          image = "Donnees/Photos/BB/" + photo;
+          document.getElementById('img').attributes[1].value = image;
+          photoOK = true;
+        }
       }
-      else
+      if (photoOK === false)
       {
-        image = node_image
-        document.getElementById('img').attributes[1].value = image;
+        document.getElementById('img').attributes[1].value = default_image;
       }
 
       document.getElementById('name').innerHTML = name;
     }
     else if(fichierHTML === "GoT.html")
     {
+      var i;
+      var photoOK = false;
+      for (i = 0; i < 20; i++)
+      {
+        var photo = listePhoto[i];
+        if ((name + ".jpg") === photo)
+        {
+          image = "Donnees/Photos/GoT/" + photo;
+          document.getElementById('img').attributes[1].value = image;
+          photoOK = true;
+        }
+      }
+      if (photoOK === false)
+      {
+        document.getElementById('img').attributes[1].value = default_image;
+      }
 
+      document.getElementById('name').innerHTML = name;
     }
     else if(fichierHTML === "HoC.html")
     {
+      var i;
+      var photoOK = false;
+      for (i = 0; i < 20; i++)
+      {
+        var photo = listePhoto[i];
+        if ((name + ".jpg") === photo)
+        {
+          image = "Donnees/Photos/HoC/" + photo;
+          document.getElementById('img').attributes[1].value = image;
+          photoOK = true;
+        }
+      }
+      if (photoOK === false)
+      {
+        document.getElementById('img').attributes[1].value = default_image;
+      }
 
+      document.getElementById('name').innerHTML = name;
     }
   });
 
