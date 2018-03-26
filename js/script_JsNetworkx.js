@@ -101,6 +101,7 @@ function episodeSuivant(){
 function episodePrecedent(){
 		prev = listeEpi[listeEpi.indexOf(episode)-1];
 		episode = prev;
+		console.log(episode);
 
     loadJSON('Donnees/BB_dyn_ts10/'+prev, function(response) {
 	// Do Something with the response e.g.

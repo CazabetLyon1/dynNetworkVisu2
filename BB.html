@@ -14,6 +14,10 @@
 
     <!-- JS && JQuery -->
     <script type="text/javascript" src="js/scriptSiteWeb.js"></script>
+    <!--
+    <script type="text/javascript" src="js/listFile.js"></script>
+    <script type="text/javascript" src="js/listPhoto.js"></script>
+    -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -21,14 +25,6 @@
 
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- D3 Scripts -->
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script>
-      d3v4 = d3
-      window.d3 = null
-    </script>
-    <script src="https://d3js.org/d3.v3.js"></script>
 
     <!-- PHP Scripts -->
     <script>
@@ -40,16 +36,24 @@
        });
        //console.log(listeEpi);
      </script>
-
      <script>
        var listePhoto;
          $.ajax({
-          url: 'php/exec_photo.php?BB',
+          url: 'php/exec_photo.php?photo=BB',
           async: false,
           success: function (response){listePhoto = response.split('§')}
         });
         console.log(listePhoto);
       </script>
+
+      <!-- D3 Scripts -->
+      <script src="https://d3js.org/d3.v4.js"></script>
+      <script>
+        d3v4 = d3
+        window.d3 = null
+      </script>
+      <script src="https://d3js.org/d3.v3.js"></script>
+
 
 
 
@@ -137,7 +141,14 @@
     <section id="graph" class="container text-center">
       <div class="col-xs-8" >
         <svg viewBox="-80 50 800 200" width="500" height="350"></svg>
+        <a role="button" onclick="episodePrecedent();">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a role="button" onclick="episodeSuivant();">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </a>
       </div>
+
 
       <div id="image" class="col-xs-4">
         <ul class="list-unstyled">
