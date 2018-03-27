@@ -1,22 +1,18 @@
 var svg = d3v4.select("svg"),
-width = +svg.attr("width"),
-height = +svg.attr("height");
+  width = +svg.attr("width"),
+  height = +svg.attr("height");
 
-var color = d3v4.scaleOrdinal(d3v4.schemeCategory20);
+  var color = d3v4.scaleOrdinal(d3v4.schemeCategory20);
 
-var simulation = d3v4.forceSimulation()
-.force("link", d3v4.forceLink().id(function(d) { return d.id; }))
-.force("charge", d3v4.forceManyBody())
-.force("center", d3v4.forceCenter(width / 2, height / 2));
+  var simulation = d3v4.forceSimulation()
+  .force("link", d3v4.forceLink().id(function(d) { return d.id; }))
+  .force("charge", d3v4.forceManyBody())
+  .force("center", d3v4.forceCenter(width / 2, height / 2));
 
 var link;
 var node;
 
 function affichageD3(nodes, edges) {
-var simulation = d3v4.forceSimulation()
-.force("link", d3v4.forceLink().id(function(d) { return d.id; }))
-.force("charge", d3v4.forceManyBody())
-.force("center", d3v4.forceCenter(width / 2, height / 2));
 
   link = svg.append("g")
   .attr("class", "links")
@@ -52,80 +48,23 @@ var simulation = d3v4.forceSimulation()
 
   node.on("click", function()
   {
-    var chemin = document.location.pathname;
-    var fichierHTML = chemin.substring(chemin.lastIndexOf( "/" )+1);
-
+    var path_image = "<img src=\"Donnees/Photos/BB/Walter_White.jpg\" alt=\"Image\">";
     var id = this.childNodes[3].innerHTML;
+    var node_image = this.childNodes[1].href.baseVal;
     var name = this.childNodes[2].innerHTML;
-    default_image = "Donnees/Photos/Default.png";
 
-    listePhoto = listePhoto.sort();
-    //if(listePhoto[0] == "") listePhoto.splice(0, 1);
-    //compter le nombre de photos
-
-    if(fichierHTML === "BB.html")
+    if (node_image === "")
     {
-      var i;
-      var photoOK = false;
-      for (i = 0; i < 20; i++)
-      {
-        var photo = listePhoto[i];
-        if ((name + ".jpg") === photo)
-        {
-          image = "Donnees/Photos/BB/" + photo;
-          document.getElementById('img').attributes[1].value = image;
-          photoOK = true;
-        }
-      }
-      if (photoOK === false)
-      {
-        document.getElementById('img').attributes[1].value = default_image;
-      }
-
-      document.getElementById('name').innerHTML = name;
+      default_image = "Donnees/Photos/Default.png";
+      document.getElementById('img').attributes[1].value = default_image;
     }
-    else if(fichierHTML === "GoT.html")
+    else
     {
-      var i;
-      var photoOK = false;
-      for (i = 0; i < 20; i++)
-      {
-        var photo = listePhoto[i];
-        if ((name + ".jpg") === photo)
-        {
-          image = "Donnees/Photos/GoT/" + photo;
-          document.getElementById('img').attributes[1].value = image;
-          photoOK = true;
-        }
-      }
-      if (photoOK === false)
-      {
-        document.getElementById('img').attributes[1].value = default_image;
-      }
-
-      document.getElementById('name').innerHTML = name;
+      image = node_image
+      document.getElementById('img').attributes[1].value = image;
     }
-    else if(fichierHTML === "HoC.html")
-    {
-      var i;
-      var photoOK = false;
-      for (i = 0; i < 20; i++)
-      {
-        var photo = listePhoto[i];
-        if ((name + ".jpg") === photo)
-        {
-          image = "Donnees/Photos/HoC/" + photo;
-          document.getElementById('img').attributes[1].value = image;
-          photoOK = true;
-        }
-      }
-      if (photoOK === false)
-      {
-        document.getElementById('img').attributes[1].value = default_image;
-      }
 
-      document.getElementById('name').innerHTML = name;
-    }
+    document.getElementById('name').innerHTML = name;
   });
 
   simulation
@@ -135,7 +74,7 @@ var simulation = d3v4.forceSimulation()
   simulation.force("link")
   .links(idEdge);
 
-
+  
 }
 
 function updateGraph(nodes, edges) {
@@ -176,113 +115,56 @@ function updateGraph(nodes, edges) {
 
   node.on("click", function()
   {
-    var chemin = document.location.pathname;
-    var fichierHTML = chemin.substring(chemin.lastIndexOf( "/" )+1);
-
+    var path_image = "<img src=\"Donnees/Photos/BB/Walter_White.jpg\" alt=\"Image\">";
     var id = this.childNodes[3].innerHTML;
+    var node_image = this.childNodes[1].href.baseVal;
     var name = this.childNodes[2].innerHTML;
-    default_image = "Donnees/Photos/Default.png";
 
-    listePhoto = listePhoto.sort();
-    //if(listePhoto[0] == "") listePhoto.splice(0, 1);
-    //compter le nombre de photos
-
-    if(fichierHTML === "BB.html")
+    if (node_image === "")
     {
-      var i;
-      var photoOK = false;
-      for (i = 0; i < 20; i++)
-      {
-        var photo = listePhoto[i];
-        if ((name + ".jpg") === photo)
-        {
-          image = "Donnees/Photos/BB/" + photo;
-          document.getElementById('img').attributes[1].value = image;
-          photoOK = true;
-        }
-      }
-      if (photoOK === false)
-      {
-        document.getElementById('img').attributes[1].value = default_image;
-      }
-
-      document.getElementById('name').innerHTML = name;
+      default_image = "Donnees/Photos/Default.png";
+      document.getElementById('img').attributes[1].value = default_image;
     }
-    else if(fichierHTML === "GoT.html")
+    else
     {
-      var i;
-      var photoOK = false;
-      for (i = 0; i < 20; i++)
-      {
-        var photo = listePhoto[i];
-        if ((name + ".jpg") === photo)
-        {
-          image = "Donnees/Photos/GoT/" + photo;
-          document.getElementById('img').attributes[1].value = image;
-          photoOK = true;
-        }
-      }
-      if (photoOK === false)
-      {
-        document.getElementById('img').attributes[1].value = default_image;
-      }
-
-      document.getElementById('name').innerHTML = name;
+      image = node_image
+      document.getElementById('img').attributes[1].value = image;
     }
-    else if(fichierHTML === "HoC.html")
-    {
-      var i;
-      var photoOK = false;
-      for (i = 0; i < 20; i++)
-      {
-        var photo = listePhoto[i];
-        if ((name + ".jpg") === photo)
-        {
-          image = "Donnees/Photos/HoC/" + photo;
-          document.getElementById('img').attributes[1].value = image;
-          photoOK = true;
-        }
-      }
-      if (photoOK === false)
-      {
-        document.getElementById('img').attributes[1].value = default_image;
-      }
 
-      document.getElementById('name').innerHTML = name;
-    }
+    document.getElementById('name').innerHTML = name;
   });
 
-
+  
   simulation.nodes(nodes);
   simulation.force("link").links(edges);
   simulation.alpha(1).restart();
-}
+} 
 
 function ticked() {
-  link
-  .attr("x1", function(d) { return d.source.x; })
-  .attr("y1", function(d) { return d.source.y; })
-  .attr("x2", function(d) { return d.target.x; })
-  .attr("y2", function(d) { return d.target.y; });
+    link
+    .attr("x1", function(d) { return d.source.x; })
+    .attr("y1", function(d) { return d.source.y; })
+    .attr("x2", function(d) { return d.target.x; })
+    .attr("y2", function(d) { return d.target.y; });
 
-  node
-  .attr("cx", function(d) { return d.x; })
-  .attr("cy", function(d) { return d.y; });
-}
+    node
+    .attr("cx", function(d) { return d.x; })
+    .attr("cy", function(d) { return d.y; });
+  }
 
-function dragstarted(d) {
-  if (!d3v4.event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x;
-  d.fy = d.y;
-}
+  function dragstarted(d) {
+    if (!d3v4.event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
 
-function dragged(d) {
-  d.fx = d3v4.event.x;
-  d.fy = d3v4.event.y;
-}
+  function dragged(d) {
+    d.fx = d3v4.event.x;
+    d.fy = d3v4.event.y;
+  }
 
-function dragended(d) {
-  if (!d3v4.event.active) simulation.alphaTarget(0);
-  d.fx = null;
-  d.fy = null;
-}
+  function dragended(d) {
+    if (!d3v4.event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
