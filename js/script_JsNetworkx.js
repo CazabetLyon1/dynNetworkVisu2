@@ -72,7 +72,6 @@ function initGraph(e){
 function episodeSuivant(){
 		next = listeEpi[listeEpi.indexOf(episode)+1];
 		episode = next;
-		console.log(episode);
     loadJSON('Donnees/BB_dyn_ts10/'+next, function(response) {
 	// Do Something with the response e.g.
 	jsonresponse = JSON.parse(response);
