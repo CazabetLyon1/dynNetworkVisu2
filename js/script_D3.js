@@ -13,10 +13,6 @@ var link;
 var node;
 
 function affichageD3(nodes, edges) {
-var simulation = d3v4.forceSimulation()
-.force("link", d3v4.forceLink().id(function(d) { return d.id; }))
-.force("charge", d3v4.forceManyBody())
-.force("center", d3v4.forceCenter(width / 2, height / 2));
 
   link = svg.append("g")
   .attr("class", "links")
