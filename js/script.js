@@ -1,105 +1,45 @@
+var G = new jsnx.Graph();
+        var idList = [];
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+        function loadJSON(callback) {
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', 'Donnees/BB_cum_D3.json', true);
+            xobj.onreadystatechange = function() {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    // .open will NOT return a value but simply returns undefined in async mode so use a callback
+                    callback(xobj.responseText);
+                }
+            }
+            xobj.send(null);
 
-var color = d3.scaleOrdinal(d3.schemeCategory20);
+        }
 
-var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d) { return d.id; }))
-    .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(width / 2, height / 2));
-
-
-d3.json("Donnees/BB_cum_D3.json", function(error, graph) {
-  if (error) throw error;
-
-  var link = svg.append("g")
-      .attr("class", "links")
-    .selectAll("line")
-    .data(graph.links)
-    .enter().append("line")
-      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
-
-  var node = svg.append("g")
-      .attr("class", "nodes")
-    .selectAll("circle")
-    .data(graph.nodes)
-    .enter().append("circle")
-      .attr("r", 10)
-      .attr("fill", function(d) { return color(d.group); })
-      .call(d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended));
+        // Call to function with anonymous callback
+        loadJSON(function(response) {
+            // Do Something with the response e.g.
+            jsonresponse = JSON.parse(response);
 
 
-  node.append("title")
-      .text(function(d) { return d.label; });
+            for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
+                idList.push(jsonresponse.nodes[i].id);
+            }
 
-  node.append("image")
-    .attr("xlink:href", function(d) { return d.image; });
 
-  node.append("text")
-      .text(function(d) { return d.label; });
+            for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
+                G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
+            }
 
-   node.append("id")
-       .text(function(d) { return d.id; });
+            for (var i = idList.length - 1; i >= 0; i--) {
+                if (G.neighbors(idList[i]).length < 8) {console.log("p");}
+            }
 
-    node.on("click", function()
-    {
-      var path_image = "<img src=\"Donnees/Photos/BB/Walter_White.jpg\" alt=\"Image\">";
-      var id = this.childNodes[3].innerHTML;
-      var node_image = this.childNodes[1].href.baseVal;
-      var name = this.childNodes[2].innerHTML;
-
-      if (node_image === "")
-      {
-        default_image = "Donnees/Photos/Default.png";
-        document.getElementById('img').attributes[1].value = default_image;
-      }
-      else
-      {
-        image = node_image
-        document.getElementById('img').attributes[1].value = image;
-      }
-
-      document.getElementById('name').innerHTML = name;
-    });
-
-  simulation
-      .nodes(graph.nodes)
-      .on("tick", ticked);
-
-  simulation.force("link")
-      .links(graph.links);
-
-  function ticked() {
-    link
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
-
-    node
-        .attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
-  }
-});
-
-function dragstarted(d) {
-  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x;
-  d.fy = d.y;
-}
-
-function dragged(d) {
-  d.fx = d3.event.x;
-  d.fy = d3.event.y;
-}
-
-function dragended(d) {
-  if (!d3.event.active) simulation.alphaTarget(0);
-  d.fx = null;
-  d.fy = null;
-}
+            G.addNodesFrom(idList);
+            jsnx.draw(G, {
+            element: '#canvas',
+             weighted: true,
+             edgeStyle: {
+            'stroke-width': 10
+            }
+            });
+        });

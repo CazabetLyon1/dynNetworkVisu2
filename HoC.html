@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head lang="fr">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Required link tags -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-slider/dist/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+
+    <!-- JS && JQuery -->
+    <script type="text/javascript" src="js/scriptSiteWeb.js"></script>
+	  <script type="text/javascript" src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+	  <script type="text/javascript" src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="screenfull.js-gh-pages/dist/screenfull.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="node_modules/bootstrap-slider/dist/bootstrap-slider.js"></script>
+
+    <!-- PHP Scripts -->
+    <script>
+      var listeEpi;
+        $.ajax({
+         url: 'php/exec_node.php?serie=HoC_dyn_ts10',
+         async: false,
+         success: function (response){listeEpi = response.split('§')}
+       });
+     </script>
+     <script>
+       var listePhoto;
+         $.ajax({
+          url: 'php/exec_photo.php?serie=HoC',
+          async: false,
+          success: function (response){listePhoto = response.split('§')}
+        });
+      </script>
+
+    <!-- D3 Scripts -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script>
+      d3v4 = d3
+      window.d3 = null
+    </script>
+    <script src="https://d3js.org/d3.v3.js"></script>
+
+    <title>Réseaux dynamiques de HoC</title>
+  </head>
+
+	<body>
+    <header>
+      <img src="Donnees/Photos/HoC/logoHoC.png" alt="Logo HoC" class="imageSerie">
+
+      <nav class="navbar navbar-light navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a id="RC3" class="navbar-brand" href="index.html">RC3</a>
+          </div>
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="index.html#intro"> Pourquoi ? </a></li>
+            <li class="dropdown">
+              <a href="BB.html" class="dropdown-toggle" data-toggle="dropdown"> Breaking Bad <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="BB.html#resume"> Résumé </a></li>
+                  <li class="divider"></li>
+                  <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 1 </a></li>
+                  <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 2 </a></li>
+                  <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 3 </a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="GoT.html" class="dropdown-toggle" data-toggle="dropdown"> Games of Thrones <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="GoT.html#resume"> Résumé </a></li>
+                  <li class="divider"></li>
+                  <li><a href="GoT.html#graph" onclick="getResumeSaison(this);"> Saison 1 </a></li>
+                  <li><a href="GoT.html#graph" onclick="getResumeSaison(this);"> Saison 2 </a></li>
+                  <li><a href="GoT.html#graph" onclick="getResumeSaison(this);"> Saison 3 </a></li>
+                  <li><a href="GoT.html#graph" onclick="getResumeSaison(this);"> Saison 4 </a></li>
+                  <li><a href="GoT.html#graph" onclick="getResumeSaison(this);"> Saison 5 </a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="HoC.html" class="dropdown-toggle" data-toggle="dropdown"> House of Cards <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="HoC.html#"> Résumé </a></li>
+                  <li class="divider"></li>
+                  <li><a href="HoC.html#graph" onclick="getResumeSaison(this);"> Saison 1 </a></li>
+                  <li><a href="HoC.html#graph" onclick="getResumeSaison(this);"> Saison 2 </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="resume" id="resume">
+      <div id="resume1" class="visible">
+        <h3>Première saison (2013)</h3>
+        <p>
+          Frank Underwood, chef du groupe parlementaire démocrate à la Chambre des représentants, a aidé son camp à remporter l'élection présidentielle américaine. Il s'attend donc à être récompensé en étant nommé Secrétaire d'état. Néanmoins le président nomme une autre personnalité. Frank va tout mettre en œuvre pour tenter d'être promu. Homme brutal et sans scrupules, il utilise une jeune journaliste (Zoe Barnes) pour divulguer des informations dans la presse et manipule un de ses collègues, Peter Russo. Il va être confronté à diverses situations dont il va se sortir à son avantage, n'hésitant pas même à tuer pour éliminer ceux qui le gênent. À la fin de la saison, il parviendra à ses fins en étant nommé vice-président.
+        </p>
+        <a href="https://fr.wikipedia.org/wiki/Saison_1_de_House_of_Cards#Résumé_de_la_saison"> Wikipédia </a>
+      </div>
+
+      <div id="resume2" class="hidden">
+        <h3>Deuxième saison (2014)</h3>
+        <p>
+
+        </p>
+        <a href="https://fr.wikipedia.org/wiki/House_of_Cards_(série_télévisée%2C_2013)#Deuxième_saison_(2014)"> Wikipédia </a>
+      </div>
+
+
+    </section>
+
+    <section id="graph" class="container text-center">
+      <div class="col-xs-8">
+        <svg viewBox="-80 50 800 200" width="500" height="350"></svg>
+      </div>
+
+      <div id="image" class="col-xs-4">
+        <ul class="list-unstyled">
+          <li>
+            <div class="alert alert-danger" role="alert">
+              Clique sur un noeud du graphe !
+            </div>
+          </li>
+          <li>
+            <img id="img" src="Donnees/Photos/HoC/Frank Underwood Security.jpg" alt="Photo">
+            <h1 id="name">Frank Underwood Security</h1>
+          </li>
+        <ul>
+      </div>
+    </section>
+
+    <footer class="nb-footer">
+    	<div class="text-center">
+    		<a class="up-arrow" href="#" data-toggle="tooltip" title="Haut de page">
+    			<span class="glyphicon glyphicon-chevron-up"></span>
+    		</a>
+    	</div>
+
+    	<div class="container text-center">
+    			<div class="col-md-3 col-sm-6">
+    				<div class="footer-info-single">
+    					<h2 class="title"> Gestion des Données </h2>
+    					<ul class="list-unstyled">
+    						<li><a href="https://jquery.com/" class="fa fa-angle-double-right">JQuery</a></li>
+    					</ul>
+    				</div>
+    			</div>
+
+    			<div class="col-md-3 col-sm-6">
+    				<div class="footer-info-single">
+    					<h2 class="title"> Gestion du Graphe </h2>
+    					<ul class="list-unstyled">
+                <li><a href="https://d3js.org/" class="fa fa-angle-double-right">D3</a></li>
+    						<li><a href="http://jsnetworkx.org/index.html" class="fa fa-angle-double-right">JsNetworkX</a></li>
+    						</ul>
+    				</div>
+    			</div>
+
+    			<div class="col-md-3 col-sm-6">
+    				<div class="footer-info-single">
+    					<h2 class="title"> Gestion du Site </h2>
+    					<ul class="list-unstyled">
+    						<li><a href="https://getbootstrap.com/" class="fa fa-angle-double-right">BootStrap</a></li>
+                <li><a href="https://www.w3schools.com" class="fa fa-angle-double-right">W3School</a></li>
+    					</ul>
+    				</div>
+    			</div>
+
+    			<div class="col-md-3 col-sm-6">
+    				<div class="footer-info-single">
+    					<h2 class="title">A propos de nous</h2>
+    					<p>3 étudiants - Licence Informatique - Université Claude Bernard Lyon 1</p>
+    					<p> Gwénola Biermé <br> Thomas Labrux <br> Lindsay Lahely </p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+
+    	<section class="copyright">
+    		<div class="container">
+    			<div class="row">
+    				<div class="text-center">
+    					<p>Copyright © 2018 - LifProjet - RC3</p>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    </footer>
+
+    <!-- JSNetworkX Scripts -->
+    <script src="js/jsnetworkx.js"></script>
+    <script src="js/script_JsNetworkx.js"></script>
+    <script src="js/script_D3.js"></script>
+  </body>
+</html>

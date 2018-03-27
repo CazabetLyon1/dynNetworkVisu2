@@ -3,32 +3,32 @@ RŽseaux dynamiques
 
 => Intro
 
-	=> Graphe reprŽsentant les interactions des personnages dÕune sŽrie au cours des saisons
 	=> PrŽsentation des membres de lÕŽquipe
+	=> Graphe reprŽsentant les interactions des personnages dÕune sŽrie au cours des saisons
+	=> Annonce du plan
 
 
 
 => DŽfinition des thermes techniques
 
-	=> QuÕest quÕun rŽseau dynamique
+	=> QuÕest quÕun rŽseaux dynamiques
 
 
 
 => Le projet (le site) 
 	
-	=> Thomas va expliquer sa partie 
-	=> Linsay va expliquer sa partie
-	=> Gwen va expliquer sa partie
+	=> GŽnŽration de graphes
+	=> Site web
 
 
 
-=> Les difficultŽs rencontrŽs 
-
+=> Ce que le projet nous a apportŽ 
+	=> Les difficultŽs
 	=> Les solutions apportŽs pour ces problmes
 
 
 
-=> Les points ˆ amŽliorer
+=> Pour aller plus loin
 
 
 
