@@ -68,10 +68,12 @@ function initGraph(e){
 		affichageD3(idList, idEdge);
 	});
 }
-
+/*
 function episodeSuivant(){
 		next = listeEpi[listeEpi.indexOf(episode)+1];
 		episode = next;
+		console.log(episode);
+
     loadJSON('Donnees/BB_dyn_ts10/'+next, function(response) {
 	// Do Something with the response e.g.
 	jsonresponse = JSON.parse(response);
@@ -101,6 +103,34 @@ function episodePrecedent(){
 		prev = listeEpi[listeEpi.indexOf(episode)-1];
 		episode = prev;
 		console.log(episode);
+
+    loadJSON('Donnees/BB_dyn_ts10/'+prev, function(response) {
+	// Do Something with the response e.g.
+	jsonresponse = JSON.parse(response);
+	G = new jsnx.Graph();
+	idList = [];
+	idEdge = [];
+
+
+	for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
+		idList.push(jsonresponse.nodes[i]);
+		//console.log(jsonresponse.nodes[i]);
+	}
+	G.addNodesFrom(idList);
+
+	for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
+		idEdge.push(jsonresponse.links[i]);
+		//console.log(jsonresponse.links[i])
+		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
+	}
+
+	//---------- AFFICHAGE D3 ----------
+	updateGraph(idList, idEdge);
+});
+}
+*/
+function updateEpisode(e){
+	prev = listeEpi[e];
 
     loadJSON('Donnees/BB_dyn_ts10/'+prev, function(response) {
 	// Do Something with the response e.g.
