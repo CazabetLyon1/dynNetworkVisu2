@@ -139,11 +139,12 @@
   <section id="graph" class="container text-center">
     <div class="col-xs-8" >
       <svg viewBox="-80 50 800 200" width="500" height="350"></svg>
-      <div class="slidecontainer" id="rangeEpisode">
-      </div>
-      <div class="text-center">
-        <input id="ex1" data-provide="slider" data-slider-id='ex1Slider' style="width: 500px" type="text" data-slider-min="0" data-slider-max="597" data-slider-step="1" data-slider-value="0" data-slider-tooltip-position ="bottom"/>
-      </div>
+      <a role="button" onclick="updateEpisode('prev');">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a role="button" onclick="updateEpisode('next');">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </a>
     </div>
 
 

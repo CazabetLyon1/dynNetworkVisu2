@@ -146,7 +146,6 @@ function updateGraph(nodes, edges) {
 function update(nodes, links) {
     // Update link set based on current state
   // DATA JOIN
-  console.log(links.length);
   link = link.data(links);
   
   // EXIT

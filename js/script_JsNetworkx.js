@@ -65,9 +65,9 @@ function initGraph(e){
 			//console.log(jsonresponse.links[i])
 			G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
 		}
-
+		pIdEdgeList.push(idList);
 		//---------- AFFICHAGE D3 ----------
-		affichageD3( idList, idEdge);
+		affichageD3( idList, pIdEdgeList[pIdEdgeList.length-1]);
 	});
 }
 /*
@@ -155,11 +155,11 @@ function updateEpisode(e){
 		//console.log(jsonresponse.links[i])
 		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
 	}
-	if(e > episode) {pIdEdge = pIdEdge.concat(idEdge); pIdEdgeList.push(pIdEdge)}
-	episode = e;
+	if(e == 'next') {pIdEdge = pIdEdge.concat(idEdge); pIdEdgeList.push(pIdEdge)}
+	else pIdEdgeList.pop();
 	//---------- AFFICHAGE D3 ----------
-
-	updateGraph(idList, pIdEdgeList[e-1]);
+	console.log(pIdEdgeList[pIdEdgeList.lenght-1]);
+	updateGraph(idList, idEdge);
 });
 }
 
