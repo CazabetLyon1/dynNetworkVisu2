@@ -1,4 +1,4 @@
-document.getElementById("rangeEpisode").innerHTML = '<input type="range" min="0" max="'+listeEpi.length+'" value="0" class="slider" id="episodeChoisi">';
+document.getElementById("rangeEpisode").innerHTML = '<input type="range" min="0" max="'+(listeEpi.length-1)+'" value="0" class="slider" id="episodeChoisi">';
 
 var slider = document.getElementById("episodeChoisi");
 

@@ -1,4 +1,7 @@
 var G;
+var episode = 0;
+var pIdEdgeList = [];
+var pIdEdge = [];
 var idList;
 var idEdge;
 
@@ -9,21 +12,18 @@ if(fichierHTML === "BB.html")
 {
 	listeEpi = listeEpi.sort();
 	if(listeEpi[0] == "") listeEpi.splice(0, 1);
-	var episode = listeEpi[0];
 	initGraph('Donnees/BB_dyn_ts10/'+listeEpi[0]);
 }
 else if(fichierHTML === "GoT.html")
 {
 	listeEpi = listeEpi.sort();
 	if(listeEpi[0] == "") listeEpi.splice(0, 1);
-	var episode = listeEpi[0];
 	initGraph('Donnees/GoT_dyn_ts10/'+listeEpi[0]);
 }
 else if(fichierHTML === "HoC.html")
 {
 	listeEpi = listeEpi.sort();
-	if(listeEpi[0] == "") listeEpi.splice(0, 1);
-	var episode = listeEpi[0];
+	if(listeEpi[0] == "") listeEpi.splice(0, 1);	
 	initGraph('Donnees/HoC_dyn_ts10/'+listeEpi[0]);
 }
 
@@ -45,7 +45,9 @@ function loadJSON(JSONfile, callback) {
 }
 
 function initGraph(e){
+
 	loadJSON(e, function(response) {
+		
 		// Do Something with the response e.g.
 		jsonresponse = JSON.parse(response);
 		G = new jsnx.Graph();
@@ -65,7 +67,7 @@ function initGraph(e){
 		}
 
 		//---------- AFFICHAGE D3 ----------
-		affichageD3(idList, idEdge);
+		affichageD3( idList, idEdge);
 	});
 }
 /*
@@ -131,8 +133,9 @@ function episodePrecedent(){
 */
 function updateEpisode(e){
 	prev = listeEpi[e];
+	pIdList = idList;
 
-    loadJSON('Donnees/BB_dyn_ts10/'+prev, function(response) {
+	loadJSON('Donnees/BB_dyn_ts10/'+prev, function(response) {
 	// Do Something with the response e.g.
 	jsonresponse = JSON.parse(response);
 	G = new jsnx.Graph();
@@ -145,15 +148,18 @@ function updateEpisode(e){
 		//console.log(jsonresponse.nodes[i]);
 	}
 	G.addNodesFrom(idList);
-
+	console.log(e);
+	console.log(episode);
 	for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
 		idEdge.push(jsonresponse.links[i]);
 		//console.log(jsonresponse.links[i])
 		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
 	}
-
+	if(e > episode) {pIdEdge = pIdEdge.concat(idEdge); pIdEdgeList.push(pIdEdge)}
+	episode = e;
 	//---------- AFFICHAGE D3 ----------
-	updateGraph(idList, idEdge);
+
+	updateGraph(idList, pIdEdgeList[e-1]);
 });
 }
 
@@ -162,7 +168,7 @@ function tailleDuNoeudVoisin(n){
 	/*if(G.neighbors(n.id).length>10){return 13;}
 	else if(G.neighbors(n.id).length>5){return 8}
 	else if(G.neighbors(n.id).length>2){return 5}
-	else{return 3;}*/
+		else{return 3;}*/
 	if (G.node.get(n.id)!=null) {
 		var voisins = G.neighbors(n.id).length;
 		if (voisins == 1) {return 3;}
@@ -174,7 +180,7 @@ function couleurDuNoeudVoisin(n){
 	//Retourne la couleur du noeud en fonction du nombre de voisins
 	/*if(G.neighbors(n.id).length>10){return 'Red';}
 	else if(G.neighbors(n.id).length>5){return 'Blue'}
-	else{return '#E7EA00';}*/
+		else{return '#E7EA00';}*/
 	if (G.node.get(n.id)!=null) {
 		var voisins = G.neighbors(n.id).length;
 		if (voisins>=10) {return "#"+voisins+"0";}
