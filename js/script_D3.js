@@ -144,25 +144,15 @@ function updateGraph(nodes, edges) {
 
 
 function update(nodes, links) {
-    // Update link set based on current state
-  // DATA JOIN
-  link = link.data(links);
-  
-  // EXIT
-    // Remove old links
-  link.exit().remove();
+    link = link.data(links, function(d) { return d.source.id + "-" + d.target.id; });
+      link.exit().remove();
+
 
   // ENTER
     // Create new links as needed.  
   link = link.enter().append("line")
-    .attr("class", "link")
     .merge(link);
 
-  // DATA JOIN
-  node = node.data(nodes);
-
-  // EXIT
-  node.exit().remove();
 
   // ENTER
   node = node.enter().append("circle")
@@ -184,22 +174,12 @@ function update(nodes, links) {
     simulation.force("link")
       .links(links);
 
-    simulation.alphaTarget(1).restart();
+    simulation.alpha(1).restart();
 }
 
-// function updateGraph(nodes, edges) {
+// function update(nodes, edges) {
 
-//   link = link.data(link, function(d) { //console.log(edges); console.log(d);
-//     //console.log(edges.includes(d));
-//     var existe = false;
-//     for (var i = edges.length - 1; i >= 0; i--) {
-//        if((d.source.id==edges[i].source) && (d.target.id==edges[i].target)){existe = true;}
-//     }
-//     if(existe) linkBis.push(d);
-//     //if (!edges.includes(d)) return d.source.id + "-" + d.target.id; 
-//   });
-//   console.log(linkBis);
-//   console.log(link);
+//   link = link.data(link, function(d) { return d.source.id + "-" + d.target.id; });
 //   link.exit().remove();
 //   link = svg.append("g")
 //   .attr("class", "links")

@@ -1,5 +1,6 @@
 var G;
 var episode = 0;
+var ep = 0;	
 var pIdEdgeList = [];
 var pIdEdge = [];
 var idList;
@@ -65,9 +66,9 @@ function initGraph(e){
 			//console.log(jsonresponse.links[i])
 			G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
 		}
-		pIdEdgeList.push(idList);
+		pIdEdgeList.push(idEdge)
 		//---------- AFFICHAGE D3 ----------
-		affichageD3( idList, pIdEdgeList[pIdEdgeList.length-1]);
+		affichageD3( idList, idEdge);
 	});
 }
 /*
@@ -132,9 +133,10 @@ function episodePrecedent(){
 }
 */
 function updateEpisode(e){
-	prev = listeEpi[e];
-	pIdList = idList;
-
+	if(e == 'next') ep+=1;
+	else ep-=1;
+	prev = listeEpi[ep];
+	// pIdList = idList;
 	loadJSON('Donnees/BB_dyn_ts10/'+prev, function(response) {
 	// Do Something with the response e.g.
 	jsonresponse = JSON.parse(response);
@@ -148,18 +150,16 @@ function updateEpisode(e){
 		//console.log(jsonresponse.nodes[i]);
 	}
 	G.addNodesFrom(idList);
-	console.log(e);
-	console.log(episode);
 	for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
 		idEdge.push(jsonresponse.links[i]);
 		//console.log(jsonresponse.links[i])
 		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
 	}
-	if(e == 'next') {pIdEdge = pIdEdge.concat(idEdge); pIdEdgeList.push(pIdEdge)}
+	if(e == 'next') {pIdEdge = pIdEdge.concat(idEdge); if(pIdEdgeList.length>=ep)pIdEdgeList.push(pIdEdge)}
 	else pIdEdgeList.pop();
+	pIdEdge = pIdEdgeList[pIdEdgeList.length-1];
 	//---------- AFFICHAGE D3 ----------
-	console.log(pIdEdgeList[pIdEdgeList.lenght-1]);
-	updateGraph(idList, idEdge);
+	updateGraph(idList, pIdEdge);
 });
 }
 
