@@ -6,6 +6,7 @@ var pIdEdge = [];
 var idList;
 var idEdge;
 
+
 var chemin = document.location.pathname;
 var fichierHTML = chemin.substring(chemin.lastIndexOf( "/" )+1);
 
@@ -57,16 +58,15 @@ function initGraph(e){
 
 		for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
 			idList.push(jsonresponse.nodes[i]);
-			//console.log(jsonresponse.nodes[i]);
 		}
 		G.addNodesFrom(idList);
 
 		for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
 			idEdge.push(jsonresponse.links[i]);
-			//console.log(jsonresponse.links[i])
 			G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
 		}
 		pIdEdgeList.push(idEdge)
+
 		//---------- AFFICHAGE D3 ----------
 		affichageD3( idList, idEdge);
 	});
@@ -133,6 +133,7 @@ function episodePrecedent(){
 }
 */
 function updateEpisode(e){
+	pIdEdge = pIdEdgeList[pIdEdgeList.length-1];
 	if(e == 'next') ep+=1;
 	else ep-=1;
 	prev = listeEpi[ep];
@@ -141,26 +142,33 @@ function updateEpisode(e){
 	// Do Something with the response e.g.
 	jsonresponse = JSON.parse(response);
 	G = new jsnx.Graph();
-	idList = [];
+	// idList = [];
 	idEdge = [];
 
 
-	for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
-		idList.push(jsonresponse.nodes[i]);
-		//console.log(jsonresponse.nodes[i]);
-	}
+	// for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
+	// 	idList.push(jsonresponse.nodes[i]);
+	// }
 	G.addNodesFrom(idList);
 	for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
 		idEdge.push(jsonresponse.links[i]);
-		//console.log(jsonresponse.links[i])
-		G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
 	}
-	if(e == 'next') {pIdEdge = pIdEdge.concat(idEdge); if(pIdEdgeList.length>=ep)pIdEdgeList.push(pIdEdge)}
-	else pIdEdgeList.pop();
-	pIdEdge = pIdEdgeList[pIdEdgeList.length-1];
-	//---------- AFFICHAGE D3 ----------
-	updateGraph(idList, pIdEdge);
-});
+	if(e == 'next') {
+		if(newLinkToAdd(pIdEdge, idEdge)){
+			var linkToRemplace = remplaceLink(pIdEdge, idEdge); 
+			for (var i = 0; i <= linkToRemplace.length - 1; i++) {
+				pIdEdge.splice(linkToRemplace[i], 1);
+			}
+			pIdEdge = pIdEdge.concat(idEdge);
+		}
+		if(pIdEdgeList.length>=ep)pIdEdgeList.push(pIdEdge)}
+			else pIdEdgeList.pop();
+		pIdEdge = pIdEdgeList[pIdEdgeList.length-1];
+		for (var i = pIdEdge.length - 1; i >= 0; i--) {
+			G.addEdge(pIdEdge[i].source.id, pIdEdge[i].target.id);
+		}	//---------- AFFICHAGE D3 ----------
+		updateGraph(idList, pIdEdge);
+	});
 }
 
 function tailleDuNoeudVoisin(n){
@@ -181,11 +189,50 @@ function couleurDuNoeudVoisin(n){
 	/*if(G.neighbors(n.id).length>10){return 'Red';}
 	else if(G.neighbors(n.id).length>5){return 'Blue'}
 		else{return '#E7EA00';}*/
+
 	if (G.node.get(n.id)!=null) {
 		var voisins = G.neighbors(n.id).length;
 		if (voisins>=10) {return "#"+voisins+"0";}
 		else {return "#"+voisins+"00";}
 	}
+	return 12;
+}
+
+function newLinkToAdd(l1, l2){
+	var l1source = [], l1target = [];
+	var n = false;
+	for (var i = l1.length - 1; i >= 0; i--) {
+		l1source.push(l1[i].source.id);
+		l1target.push(l1[i].target.id)
+	}
+	for (var i = l2.length - 1; i >= 0; i--) {
+		var t = false;
+		for (var j = l1source.length - 1; j >= 0; j--) {
+			if(l1source[j]==l2[i].source && l1target[j]==l2[i].target) t = true;
+		}
+		if(!t) n = true;
+	}
+	return n;
+}
+
+function remplaceLink(edges, newEdges) {	
+	var linkToRemplace = [];
+	for (var i = edges.length - 1; i >= 0; i--) {
+		edges[i].source = edges[i].source.id;
+		edges[i].target = edges[i].target.id;
+	}
+	for (var i = newEdges.length - 1; i >= 0; i--) {
+		
+		var query = {source: newEdges[i].source, target: newEdges[i].target};
+
+		var result = edges.indexOf(edges.filter(search, query)[0]);
+		if(result!=-1) linkToRemplace.push(result);
+	}
+	return linkToRemplace;
+}
+
+function search(edge){
+	return Object.keys(this).every((key) => edge[key] === this[key]);
 }
 
 /*var width = 1920, height = 1080
