@@ -175,7 +175,7 @@ function updateGraph(nodes, edges) {
   node.on("click", function()
   {
     node.attr("fill", function(d) { return couleurDuNoeudVoisin(d);});
-    this.attributes[1].nodeValue = "#131";
+    this.attributes[1].nodeValue = "#169";
     var chemin = document.location.pathname;
     var fichierHTML = chemin.substring(chemin.lastIndexOf( "/" )+1);
 
