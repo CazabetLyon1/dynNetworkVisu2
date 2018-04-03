@@ -251,7 +251,7 @@ function updateGraph(nodes, edges) {
 
   simulation.nodes(nodes);
   simulation.force("link").links(edges);
-  simulation.alpha(1).restart();
+  simulation.alpha(0.1).restart();
 }
 
 function ticked() {
