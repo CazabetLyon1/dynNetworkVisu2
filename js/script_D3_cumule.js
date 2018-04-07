@@ -60,7 +60,12 @@ function affichageD3Cumule(nodes, edges) {
         if (fichierHTML === "BB.html") {
             var i;
             var photoOK = false;
-            for (i = 0; i < 20; i++) {
+            if (name === "Walter White Jr."){
+              image = "Donnees/Photos/BB/Walter White Jr..jpg";
+              document.getElementById('img').attributes[1].value = image;
+              photoOK = true;
+            }
+            for (i = 0; i < 25; i++) {
                 var photo = listePhoto[i];
                 if ((name + ".jpg") === photo) {
                     image = "Donnees/Photos/BB/" + photo;
@@ -76,7 +81,7 @@ function affichageD3Cumule(nodes, edges) {
         } else if (fichierHTML === "GoT.html") {
             var i;
             var photoOK = false;
-            for (i = 0; i < 20; i++) {
+            for (i = 0; i < 25; i++) {
                 var photo = listePhoto[i];
                 if ((name + ".jpg") === photo) {
                     image = "Donnees/Photos/GoT/" + photo;
@@ -92,7 +97,7 @@ function affichageD3Cumule(nodes, edges) {
         } else if (fichierHTML === "HoC.html") {
             var i;
             var photoOK = false;
-            for (i = 0; i < 20; i++) {
+            for (i = 0; i < 25; i++) {
                 var photo = listePhoto[i];
                 if ((name + ".jpg") === photo) {
                     image = "Donnees/Photos/HoC/" + photo;

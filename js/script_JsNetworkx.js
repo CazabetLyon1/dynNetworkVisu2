@@ -72,8 +72,22 @@ function initGraph(e) {
 
 function updateEpisode(e) {
     prev = listeEpi[e];
+    var cheminDonnees;
 
-    loadJSON('Donnees/BB_dyn_ts10/' + prev, function(response) {
+    var chemin = document.location.pathname;
+    var fichierHTML = chemin.substring(chemin.lastIndexOf("/") + 1);
+
+    if (fichierHTML === "BB.html"){
+      cheminDonnees = "Donnees/BB_dyn_ts10/";
+    }
+    else if (fichierHTML === "GoT.html") {
+      cheminDonnees = "Donnees/GoT_dyn_ts10/";
+    }
+    else if (fichierHTML === "HoC.html") {
+      cheminDonnees = "Donnees/HoC_dyn_ts10/";
+    }
+
+    loadJSON(cheminDonnees + prev, function(response) {
         // Do Something with the response e.g.
         jsonresponse = JSON.parse(response);
         G = new jsnx.Graph();
