@@ -6,7 +6,7 @@ import json
 import os
 
 i = 0
-list = os.listdir('Donnees/HoC_dyn_ts10')
+list = os.listdir('Donnees/GoT_dyn_ts10')
 list.sort()
 for val in list:
     if(i % 10 == 0):
