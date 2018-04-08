@@ -23,8 +23,8 @@ function affichageD3Cumule(nodes, edges) {
         .selectAll("circle")
         .data(nodes)
         .enter().append("circle")
-        .attr("r", function(d) { return tailleDuNoeudVoisin(d); })
-        .attr("fill", function(d) { return couleurDuNoeudVoisin(d); })
+        .attr("r", function(d) { if(nbVoisinTaille)return tailleDuNoeudVoisinCumule(d); else return tailleDuNoeudAncienCumule(d)})
+        .attr("fill", function(d) { return couleurDuNoeudVoisinCumule(d); })
         .call(d3v4.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
@@ -44,7 +44,7 @@ function affichageD3Cumule(nodes, edges) {
         .text(function(d) { return d.id; });
 
     node.on("click", function() {
-        node.attr("fill", function(d) { return couleurDuNoeudVoisin(d); });
+        node.attr("fill", function(d) {if(nbVoisinCouleur) return couleurDuNoeudVoisinCumule(d); else return couleurDuNoeudAncienCumule(d);});
         this.attributes[1].nodeValue = "#169";
         var chemin = document.location.pathname;
         var fichierHTML = chemin.substring(chemin.lastIndexOf("/") + 1);
@@ -122,6 +122,14 @@ function affichageD3Cumule(nodes, edges) {
     simulation.force("link")
         .links(idEdge);
 
-    simulation.alpha(0.8).restart();
+    simulation.alpha(0.2).restart();
 
+}
+
+function changeTaille(){
+    node.attr("r", function(d) { if(nbVoisinTaille) return tailleDuNoeudVoisinCumule(d); else return tailleDuNoeudAncienCumule(d)})
+}
+
+function changeCouleur(){
+    node.attr("fill", function(d) { if(nbVoisinCouleur) return couleurDuNoeudVoisinCumule(d); else return couleurDuNoeudAncienCumule(d);});
 }

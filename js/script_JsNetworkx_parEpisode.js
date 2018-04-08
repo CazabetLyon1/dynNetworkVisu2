@@ -1,4 +1,5 @@
 function affichageParEpisode() {
+    clearTimeout(timeoutCumule);
     sliderCreate();
     document.getElementById("btnParEpisode").disabled = true;
     document.getElementById("btnCumule").disabled = false;
@@ -55,13 +56,11 @@ function initGraph(e) {
 
         for (var i = jsonresponse.nodes.length - 1; i >= 0; i--) {
             idList.push(jsonresponse.nodes[i]);
-            //console.log(jsonresponse.nodes[i]);
         }
         G.addNodesFrom(idList);
 
         for (var i = jsonresponse.links.length - 1; i >= 0; i--) {
             idEdge.push(jsonresponse.links[i]);
-            //console.log(jsonresponse.links[i])
             G.addEdge(jsonresponse.links[i].source, jsonresponse.links[i].target);
         }
 
@@ -86,7 +85,6 @@ function updateEpisode(e) {
     else if (fichierHTML === "HoC.html") {
       cheminDonnees = "Donnees/HoC_dyn_ts10/";
     }
-
     loadJSON(cheminDonnees + prev, function(response) {
         // Do Something with the response e.g.
         jsonresponse = JSON.parse(response);
