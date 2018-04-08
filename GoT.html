@@ -26,6 +26,8 @@
     <!-- PHP Scripts -->
     <script>
     var listeEpi;
+    var timeoutCumule = null;
+
     $.ajax({
         url: 'php/exec_node.php?serie=GoT_dyn_ts10',
         async: false,
@@ -153,6 +155,8 @@
                     <h1 id="name">Daenerys Targaryen</h1>
                 </li>
                 <ul>
+        </div>
+        <div id="choixTaille">
         </div>
         <div id="choixCouleur">
         </div>

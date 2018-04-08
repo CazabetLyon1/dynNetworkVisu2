@@ -26,6 +26,8 @@
     <!-- PHP Scripts -->
     <script>
     var listeEpi;
+    var timeoutCumule = null;
+
     $.ajax({
         url: 'php/exec_node.php?serie=HoC_dyn_ts10',
         async: false,
@@ -131,6 +133,8 @@
                     <h1 id="name">Frank Underwood Security</h1>
                 </li>
                 <ul>
+        </div>
+        <div id="choixTaille">
         </div>
         <div id="choixCouleur">
         </div>
