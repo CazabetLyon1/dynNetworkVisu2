@@ -12,7 +12,8 @@
     * [Graphes](#graphes)
     * [Interface](#interface)
 1. [Présentation du projet](#presentation-du-projet)
-
+    * [Installation](#installation)
+    * [Guide utilisateurs](#guide-utilisateur)
 
 <a name="introduction"></a>
 ## Introduction
@@ -85,6 +86,24 @@ Les étapes du projet :
 
 <a name="interface"></a>
 ### Interface
+
+
+[//]: # "}}}"
+
+
+
+<a name="presentation-du-projet"></a>
+## Présentation du projet
+
+
+[//]: # "{{{"
+
+<a name="installation"></a>
+### Installation
+
+
+<a name="guide-utilisateurs"></a>
+### Guide utilisateur
 
 
 [//]: # "}}}"
