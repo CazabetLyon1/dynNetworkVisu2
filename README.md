@@ -37,11 +37,16 @@ Equipe : LDFC
 <a name="objectif"></a>
 ### Objectif
 
+RC3. Implémentation d’un outil de visualisation de l’évolution de réseaux dynamiques en langages web 
+- http://perso.univ-lyon1.fr/fabien.rico/site/projet:sujets2018printemps#rc3_implementation_d_un_outil_de_visualisation_de_l_evolution_de_reseaux_dynamiques_en_langages_web
 
 
 <a name="competences-visees"></a>
 ### Compétences visées
 
+- Langages Web : HTML, CSS, JS
+- Langage Orienté Objet : Python 
+- Apprendre à gérer des graphes avec JSNetworkX et D3
 
 
 <a name="realisation"></a>
@@ -53,12 +58,12 @@ Les étapes du projet :
     - lire un peu sur l’analyse de réseaux sociaux (https://fr.wikipedia.org/wiki/Analyse_des_réseaux_sociaux), et idéalement la science des réseaux (https://en.wikipedia.org/wiki/Network_science) pour avoir un peu de background, ainsi que quelques cas sur Game of thrones pour se faire une idée de ce qui peut être intéressant : (https://datascienceplus.com/network-analysis-of-game-of-thrones/ , https://www.macalester.edu/~abeverid/thrones.html )
 
 - 2) Se lancer dans le code.
-    - 1)Charger 1 fichier de réseau de GOT et l’afficher.
-    - 1.5) Ajouter des couleurs/taille de nœuds en fonction de propriétés de réseaux (centralisé, communautés, ancienneté…)
-    - 2)Charger 2 réseaux successifs différents et gérer la transition d’affichage entre les 2
-    - 3)Charger tous les réseaux et voir donc la “vidéo” de l’évolution du réseau
-    - 4)Voir que c’est pas terrible parce qu’on ne voit rien et ça bouge de partout (instable, lent …)
-    - 5)Régler tous ces problèmes jusqu’à avoir un beau réseau qui évolue :)
+    - Charger 1 fichier de réseau de GOT et l’afficher.
+    - Ajouter des couleurs/taille de nœuds en fonction de propriétés de réseaux (centralisé, communautés, ancienneté…)
+    - Charger 2 réseaux successifs différents et gérer la transition d’affichage entre les 2
+    - Charger tous les réseaux et voir donc la “vidéo” de l’évolution du réseau
+    - Voir que c’est pas terrible parce qu’on ne voit rien et ça bouge de partout (instable, lent …)
+    - Régler tous ces problèmes jusqu’à avoir un beau réseau qui évolue :)
 
 - 3) Pour des raisons techniques, vous risquez aussi à un moment de vouloir calculer des indicateurs de réseaux qui ne sont pas dans jsnetworkx. 2 solutions : vous les recodez en JS (pas évident), ou vous utilisez la librairie python networkx et vous gérer l’interfacage python/js .
 
