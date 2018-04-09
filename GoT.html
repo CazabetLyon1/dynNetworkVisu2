@@ -156,9 +156,14 @@
                 </li>
                 <ul>
         </div>
-        <div id="choixTaille">
-        </div>
-        <div id="choixCouleur">
+        <div id="choixCumule" class="hidden">
+          <p>Taille des noeuds par :</p>
+          <button type="button" class="btn btn-primary" id="btnVoisinsTaille" onclick="nbVoisinTailleClique()">Nb voisins</button>
+          <button type="button" class="btn btn-primary" id="btnAncienTaille" onclick="ancienTailleClique()">Ancienneté</button>
+          <br>
+          <p>Couleurs des noeuds par :</p>
+          <button type="button" class="btn btn-primary" id="btnVoisinsCouleur" onclick="nbVoisinCouleurClique()">Nb voisins</button>
+          <button type="button" class="btn btn-primary" id="btnAncienCouleur" onclick="ancienCouleurClique()">Ancienneté</button>
         </div>
     </section>
     <footer class="nb-footer">

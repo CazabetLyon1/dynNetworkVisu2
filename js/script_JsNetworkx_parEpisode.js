@@ -3,7 +3,7 @@ function affichageParEpisode() {
     sliderCreate();
     document.getElementById("btnParEpisode").disabled = true;
     document.getElementById("btnCumule").disabled = false;
-    document.getElementById("choixCouleur").innerHTML = "";
+    document.getElementById("choixCumule").attributes.class.nodeValue = "hidden";
     var G;
     var idList;
     var idEdge;

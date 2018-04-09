@@ -7,61 +7,12 @@ function affichageCumule() {
     var nbVoisinCouleur;
     sliderDelete();
 
-
-
     document.getElementById("btnCumule").disabled = true;
     document.getElementById("btnParEpisode").disabled = false;
-    var label = document.createElement("label");
-    label.innerHTML = "Taille des noeuds par :";
-    var p = document.createElement('p');
-    p.appendChild(label);
-    var btnVoisins = document.createElement('button');
-    var btnAncien = document.createElement('button');
-    btnVoisins.setAttribute("style", "margin-top:10px;");
-    btnVoisins.setAttribute("id", "btnVoisinsTaille");
-    btnVoisins.setAttribute("type", "button");
-    btnVoisins.setAttribute("onclick", "nbVoisinTailleClique()");
-    btnVoisins.setAttribute("class", "btn btn-primary");
-    btnVoisins.innerHTML += "Nb voisins";
-
-    btnAncien.setAttribute("style", "margin-top:10px;");
-    btnAncien.setAttribute("id", "btnAncienTaille");
-    btnAncien.setAttribute("onclick", "ancienTailleClique()");
-    btnAncien.setAttribute("type", "button");
-    btnAncien.setAttribute("class", "btn btn-primary");
-    btnAncien.innerHTML += "Ancienneté";
-    document.getElementById("choixTaille").appendChild(p);
-    document.getElementById("choixTaille").appendChild(btnVoisins);
-    document.getElementById("choixTaille").appendChild(btnAncien);
-
-    var label = document.createElement("label");
-    label.innerHTML = "Couleur des noeuds par :";
-    var p = document.createElement('p');
-    p.appendChild(label);
-    var btnVoisins = document.createElement('button');
-    var btnAncien = document.createElement('button');
-    btnVoisins.setAttribute("style", "margin-top:10px;");
-    btnVoisins.setAttribute("id", "btnVoisinsCouleur");
-    btnVoisins.setAttribute("type", "button");
-    btnVoisins.setAttribute("onclick", "nbVoisinCouleurClique()");
-    btnVoisins.setAttribute("class", "btn btn-primary");
-    btnVoisins.innerHTML += "Nb voisins";
-
-    btnAncien.setAttribute("style", "margin-top:10px;");
-    btnAncien.setAttribute("id", "btnAncienCouleur");
-    btnAncien.setAttribute("onclick", "ancienCouleurClique()");
-    btnAncien.setAttribute("type", "button");
-    btnAncien.setAttribute("class", "btn btn-primary");
-    btnAncien.innerHTML += "Ancienneté";
-    document.getElementById("choixTaille").appendChild(p);
-    document.getElementById("choixCouleur").appendChild(btnVoisins);
-    document.getElementById("choixCouleur").appendChild(btnAncien);
+    document.getElementById("choixCumule").attributes.class.nodeValue = "visible";
     nbVoisinTailleClique();
     nbVoisinCouleurClique();
 
-
-    //var serie = location.pathname.substring(1).split("/")[1].split(".")[0];
-    //console.log(serie);
     var chemin = document.location.pathname;
     var fichierHTML = chemin.substring(chemin.lastIndexOf("/") + 1);
 
