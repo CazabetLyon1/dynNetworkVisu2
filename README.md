@@ -1,9 +1,65 @@
-LIFProjet
+# LIFProjet 2018
+
+## Index
+
+1. [Introduction](#introduction)
+    * [Équipe](#equipe)
+    * [Encadrant](#encadrant)
+    * [Objectif](#objectif)
+    * [Compétences visées](#competences-visees)
+    * [Réalisation](#realisation)
+1. [Votre travail](#votre-travail)
+
+1. [Présentation du projet](#presentation-du-projet)
+
+
+<a name="introduction"></a>
+## Introduction
+
+
+[//]: # "{{{"
+
+<a name="equipe"></a>
+### Équipe
 
 Equipe : LDFC
+Membre de l'équipe :
+- Gwénola Biermé
+- Thomas Labrux
+- Lindsay Lahely 
+
+
+<a name="encadrant"></a>
+### Encadrant
 
 Encadrant : remy.cazabet@univ-lyon1.fr
 Présence de l'encadrant : tous les mardi après-midi
+
+<a name="objectif"></a>
+### Objectif
+
+
+
+<a name="competences-visees"></a>
+### Compétences visées
+
+
+
+<a name="realisation"></a>
+### Réalisation
+
+
+
+[//]: # "}}}"
+
+
+
+
+
+
+
+
+
 
 Les étapes du projet :
 1) Se familiariser avec
