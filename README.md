@@ -46,7 +46,7 @@ RC3. Implémentation d’un outil de visualisation de l’évolution de réseaux
 <a name="competences-visees"></a>
 ### Compétences visées
 
-- Langages Web : HTML, CSS, JS
+- Langages Web : HTML, CSS, JS, PHP
 - Langage Orienté Objet : Python 
 - Apprendre à gérer des graphes avec JSNetworkX et D3
 
@@ -101,10 +101,22 @@ Les étapes du projet :
 <a name="installation"></a>
 ### Installation
 
+Si vous installez notre projet en local, installez sur votre machine LAMP / WAMP / MAMP en fonction de votre système d'exploitation.
+Se sera inspensable pour pouvoir visualiser les graphes puisque nous avons eu recours à du php.
 
 <a name="guide-utilisateurs"></a>
 ### Guide utilisateur
 
+Plan du site web :
+- index.html
+- BB.html
+- GoT.html
+- HoC.html
+
+Sur la page d'accueil vous avez accès à
+- pourquoi nous avons choisi ce projet
+- le sujet de notre projet
+- un lien en un clique sur chacune des séries (en cliquant sur le logo)
 
 [//]: # "}}}"
 
