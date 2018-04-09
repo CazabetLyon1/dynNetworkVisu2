@@ -23,7 +23,6 @@
 ### Équipe
 
 Equipe : LDFC
-Membre de l'équipe :
 - Gwénola Biermé
 - Thomas Labrux
 - Lindsay Lahely 
