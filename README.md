@@ -84,14 +84,19 @@ Les étapes du projet :
 ### Graphes
 
 - Mise en place d'un script python permettant detransformer un fichier.graphml en fichier.JSON adapté à l'utilisation pour JSNetworkX et D3
-- 
+
 
 
 <a name="interface"></a>
 ### Interface
 
 - Utilisation des frameworks Bootstrap et JQuery pour la mise en place de l'apparence du site
-    - En-tête / Pied de page / Responsive Design
+    - En-tête
+    - Barre de navigation
+    - Pied de page
+    - Responsive Design
+    - Ergonomie
+
 - Mise en place de la fenêtre permettant de visualiser la photo du personnage en utilisant du JavaScript et D3
     - Récupération de l'ID du noeud correspondant au personnage
     - Vérification de l'existance de la photo du personnage dans le répertoire en fonction de son nom et de la série 
