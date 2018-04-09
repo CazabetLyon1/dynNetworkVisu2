@@ -8,8 +8,9 @@
     * [Objectif](#objectif)
     * [Compétences visées](#competences-visees)
     * [Réalisation](#realisation)
-1. [Votre travail](#votre-travail)
-
+1. [Notre travail](#notre-travail)
+    * [Graphes](#graphes)
+    * [Interface](#interface)
 1. [Présentation du projet](#presentation-du-projet)
 
 
@@ -72,10 +73,21 @@ Les étapes du projet :
 [//]: # "}}}"
 
 
+<a name="notre-travail"></a>
+## Notre travail
 
 
+[//]: # "{{{"
+
+<a name="graphes"></a>
+### Graphes
 
 
+<a name="interface"></a>
+### Interface
+
+
+[//]: # "}}}"
 
 
 
