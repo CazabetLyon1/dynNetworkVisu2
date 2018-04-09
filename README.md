@@ -141,7 +141,7 @@ Sur les pages des séries vous avez accès à
 - une petite fênetre permettant d'afficher la photo et le nom des personnages lorsque l'on clique sur un noeud du graphe
 
 [//]: # "}}}"
-
+ 
 
 
 
