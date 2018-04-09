@@ -149,7 +149,7 @@ text
   pointer-events: none;
 }
 
-#btnParEpisode, #btnCumule, #btnVoisins, #btnAncien
+#btnParEpisode, #btnCumule
 {
   margin-right: 5px;
 }

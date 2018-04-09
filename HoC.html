@@ -8,15 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Required link tags -->
     <link rel="stylesheet" href="css/style.css">
-    <!--<link rel="stylesheet" href="node_modules/bootstrap-slider/dist/css/bootstrap-slider.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">-->
     <!-- JS && JQuery -->
     <script type="text/javascript" src="js/scriptSiteWeb.js"></script>
-    <!--@
-    <script type="text/javascript" src="js/listFile.js"></script>
-    <script type="text/javascript" src="js/listPhoto.js"></script>
-    -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -82,8 +76,8 @@
                             <li><a href="HoC.html#resume"> Résumé </a></li>
                             <li><a href="HoC.html#graph"> Graphe </a></li>
                             <li class="divider"></li>
-                            <li><a href="HoC.html#resume" onclick="getResumeSaison(this);"> Saison 1 </a></li>
-                            <li><a href="HoC.html#resume" onclick="getResumeSaison(this);"> Saison 2 </a></li>
+                            <li><a href="HoC.html#graph" onclick="getResumeSaison(this);"> Saison 1 </a></li>
+                            <li><a href="HoC.html#graph" onclick="getResumeSaison(this);"> Saison 2 </a></li>
                         </ul>
                     </li>
                 </ul>
@@ -106,6 +100,11 @@
         </div>
     </section>
     <section id="graph" class="container text-center">
+        <div class="col-xs-8 text-center">
+            <a class="up-arrow" href="HoC.html#resume" data-toggle="tooltip" title="Haut de page">
+              <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+        </div>
         <div class="col-xs-8">
             <svg viewBox="-80 50 800 200" width="500" height="350"></svg>
             <div class="slidecontainer" id="rangeEpisode"></div>
@@ -127,6 +126,7 @@
                 </li>
                 <ul>
         </div>
+        <br>
         <div id="choixCumule" class="hidden">
           <p>Taille des noeuds par :</p>
           <button type="button" class="btn btn-primary" id="btnVoisinsTaille" onclick="nbVoisinTailleClique()">Nb voisins</button>

@@ -61,9 +61,9 @@
                             <li><a href="BB.html#resume"> Résumé </a></li>
                             <li><a href="BB.html#graph"> Graphe </a></li>
                             <li class="divider"></li>
-                            <li><a href="BB.html#resume" onclick="getResumeSaison(this);"> Saison 1 </a></li>
-                            <li><a href="BB.html#resume" onclick="getResumeSaison(this);"> Saison 2 </a></li>
-                            <li><a href="BB.html#resume" onclick="getResumeSaison(this);"> Saison 3 </a></li>
+                            <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 1 </a></li>
+                            <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 2 </a></li>
+                            <li><a href="BB.html#graph" onclick="getResumeSaison(this);"> Saison 3 </a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -108,6 +108,11 @@
         </div>
     </section>
     <section id="graph" class="container text-center">
+        <div class="col-xs-8 text-center">
+            <a class="up-arrow" href="BB.html#resume" data-toggle="tooltip" title="Haut de page">
+              <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+        </div>
         <div class="col-xs-8">
             <svg viewBox="-80 50 800 200" width="500" height="350"></svg>
             <div class="slidecontainer" id="rangeEpisode"></div>
@@ -129,6 +134,7 @@
                 </li>
             </ul>
         </div>
+        <br>
         <div id="choixCumule" class="hidden">
           <p>Taille des noeuds par :</p>
           <button type="button" class="btn btn-primary" id="btnVoisinsTaille" onclick="nbVoisinTailleClique()">Nb voisins</button>
