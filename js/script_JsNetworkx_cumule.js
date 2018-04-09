@@ -58,8 +58,20 @@ function affichageCumule() {
     document.getElementById("choixCouleur").appendChild(btnAncien);
     nbVoisinTailleClique();
     nbVoisinCouleurClique();
-    var serie = location.pathname.substring(1).split("/")[1].split(".")[0];
-    initGraphCumule('Donnees/' + serie + "_cum_D3.json");
+
+
+    //var serie = location.pathname.substring(1).split("/")[1].split(".")[0];
+    //console.log(serie);
+    var chemin = document.location.pathname;
+    var fichierHTML = chemin.substring(chemin.lastIndexOf("/") + 1);
+
+    if (fichierHTML === "BB.html") {
+      initGraphCumule("Donnees/BB_cum_D3.json");
+    } else if (fichierHTML === "GoT.html") {
+      initGraphCumule("Donnees/GoT_cum_D3.json");
+    } else if (fichierHTML === "HoC.html") {
+      initGraphCumule("Donnees/HoC_cum_D3.json");
+    }
 }
 
 
