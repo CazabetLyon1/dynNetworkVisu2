@@ -118,6 +118,13 @@ Sur la page d'accueil vous avez accès à
 - le sujet de notre projet
 - un lien en un clique sur chacune des séries (en cliquant sur le logo)
 
+Sur les pages des séries vous avez accès à
+- un résumé de la srie par saison
+- un graphes dynamique permettant une visualisation
+    - par épisode
+    - en cumulé avec des paramètres de tailles et de couleurs de noeuds selon le nombre de noeud ou l'ancienneté des personnages
+- une petite fênetre permettant d'afficher la photo et le nom des personnages lorsque l'on clique sur un noeud du graphe
+
 [//]: # "}}}"
 
 
