@@ -83,8 +83,19 @@ Les étapes du projet :
 <a name="graphes"></a>
 ### Graphes
 
-- Mise en place d'un script python permettant detransformer un fichier.graphml en fichier.JSON adapté à l'utilisation pour JSNetworkX et D3
-
+- Mise en place d'un script python permettant de transformer un fichier.graphml en fichier.JSON adapté à l'utilisation pour JSNetworkX et D3
+- Récupération de la liste des fichiers de données au format JSON
+- Création d'un graphe avec JSNetworkX
+    - Création des noeuds
+    - Création des liens entre les noeuds
+    - Mise a jour du graph en fonction du fichier chargé
+    - Pour le graphe cumulé, ajout d'un lien toutes les x secondes puis mise a jour de l'affichage
+    
+- Affichage du graphe avec D3
+    - Affichage d'un graphe par épisode ou d'un graphe cumulé
+    - Affichage des noeuds ayant plus de x voisins
+    - Coloration des noeuds en fonction des voisins/de l'ancienneté
+    - Affichage de la photo du personnage en cas de clique sur un noeud
 
 
 <a name="interface"></a>
@@ -117,7 +128,7 @@ Les étapes du projet :
 ### Installation
 
 Si vous installez notre projet en local, installez sur votre machine LAMP / WAMP / MAMP en fonction de votre système d'exploitation.
-Se sera inspensable pour pouvoir visualiser les graphes puisque nous avons eu recours à du php.
+Ce sera inspensable pour pouvoir visualiser les graphes puisque nous avons eu recours à du php.
 
 <a name="guide-utilisateurs"></a>
 ### Guide utilisateur
@@ -134,10 +145,10 @@ Sur la page d'accueil vous avez accès à
 - un lien en un clique sur chacune des séries (en cliquant sur le logo)
 
 Sur les pages des séries vous avez accès à
-- un résumé de la srie par saison
+- un résumé de la série par saison
 - un graphes dynamique permettant une visualisation
     - par épisode
-    - en cumulé avec des paramètres de tailles et de couleurs de noeuds selon le nombre de noeud ou l'ancienneté des personnages
+    - en cumulé avec des paramètres de tailles et de couleurs de noeuds selon le nombre de voisins ou l'ancienneté des personnages
 - une petite fênetre permettant d'afficher la photo et le nom des personnages lorsque l'on clique sur un noeud du graphe
 
 [//]: # "}}}"
