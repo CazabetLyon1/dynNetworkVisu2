@@ -132,7 +132,46 @@ function couleurDuNoeudVoisinCumule(n) {
     //Retourne la couleur du noeud en fonction du nombre de voisins
     if (Gcum.node.get(n.id) != null) {
         var voisins = Gcum.neighbors(n.id).length;
-        if (voisins >= 10) { return "#" + voisins + "0"; } else { return "#" + voisins + "19"; }
+        if (voisins <= 10)
+        {
+          return "#" + voisins + "997";
+        }
+        else if (voisins <= 20)
+        {
+          return "#" + voisins + "897";
+        }
+        else if (voisins <= 30)
+        {
+          return "#" + voisins + "797";
+        }
+        else if (voisins <= 40)
+        {
+          return "#" + voisins + "697";
+        }
+        else if (voisins <= 50)
+        {
+          return "#" + voisins + "597";
+        }
+        else if (voisins <= 60)
+        {
+          return "#" + voisins + "497";
+        }
+        else if (voisins <= 70)
+        {
+          return "#" + voisins + "397";
+        }
+        else if (voisins <= 80)
+        {
+          return "#" + voisins + "297";
+        }
+        else if (voisins <= 90)
+        {
+          return "#" + voisins + "197";
+        }
+        else
+        {
+          return "#" + voisins + "0";
+        }
     }
 }
 
@@ -140,6 +179,45 @@ function couleurDuNoeudAncienCumule(n) {
     //Retourne la couleur du noeud en fonction du nombre de voisins
     if (Gcum.node.get(n.id) != null) {
         var ancien = apparition.indexOf(n.id);
-        if (ancien >= 10) { return "#" + ancien + "0"; } else { return "#" + ancien + "19"; }
+        if (ancien <= 10)
+        {
+          return "#" + ancien + "997";
+        }
+        else if (ancien <= 20)
+        {
+          return "#" + ancien + "897";
+        }
+        else if (ancien <= 30)
+        {
+          return "#" + ancien + "797";
+        }
+        else if (ancien <= 40)
+        {
+          return "#" + ancien + "697";
+        }
+        else if (ancien <= 50)
+        {
+          return "#" + ancien + "597";
+        }
+        else if (ancien <= 60)
+        {
+          return "#" + ancien + "497";
+        }
+        else if (ancien <= 70)
+        {
+          return "#" + ancien + "397";
+        }
+        else if (ancien <= 80)
+        {
+          return "#" + ancien + "297";
+        }
+        else if (ancien <= 90)
+        {
+          return "#" + ancien + "197";
+        }
+        else
+        {
+          return "#" + ancien + "0";
+        }
     }
 }
